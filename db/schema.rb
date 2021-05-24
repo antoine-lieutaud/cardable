@@ -10,10 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_144248) do
+ActiveRecord::Schema.define(version: 2021_05_24_150552) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "offers", force: :cascade do |t|
+    t.integer "price"
+    t.string "description"
+    t.bigint "restaurant_id", null: false
+    t.string "state"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_offers_on_restaurant_id"
+  end
+
+  create_table "redeems", force: :cascade do |t|
+    t.bigint "voucher_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["voucher_id"], name: "index_redeems_on_voucher_id"
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "phone_number"
+    t.string "email"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_restaurants_on_user_id"
+  end
+
+  create_table "staffs", force: :cascade do |t|
+    t.bigint "restaurant_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_staffs_on_restaurant_id"
+    t.index ["user_id"], name: "index_staffs_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +64,20 @@ ActiveRecord::Schema.define(version: 2021_05_24_144248) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vouchers", force: :cascade do |t|
+    t.bigint "offer_id", null: false
+    t.string "qr_code"
+    t.integer "limit_use"
+    t.string "limit_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["offer_id"], name: "index_vouchers_on_offer_id"
+  end
+
+  add_foreign_key "offers", "restaurants"
+  add_foreign_key "redeems", "vouchers"
+  add_foreign_key "restaurants", "users"
+  add_foreign_key "staffs", "restaurants"
+  add_foreign_key "staffs", "users"
+  add_foreign_key "vouchers", "offers"
 end
