@@ -6,6 +6,4 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:new, :create, :show] do
     resources :offers, only: [:index, :new, :create]
   end
-
-
 end
