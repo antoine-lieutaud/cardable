@@ -1,11 +1,59 @@
-.btn-flat {
+// ##### bouton orange
+.btn-dashboard {
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: $orange_dashboard;
   transition: background 0.3s ease;
 }
 
-.btn-flat:hover {
-  background: #1BCB7F;
+.btn-dashboard:hover {
+  background: #be6703 ;
   color: white;
+}
+// ##### bouton orange
+
+// ##### bouton rouge
+.btn-nouveau-coupon {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $rouge_coupon;
+  transition: background 0.3s ease;
+}
+
+.btn-nouveau-coupon:hover {
+  background: #7e0b0b ;
+  color: white;
+}
+// ##### bouton rouge
+
+// ##### bouton jaune
+.btn-scanner {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $jaune_scanner;
+  transition: background 0.3s ease;
+}
+
+.btn-scanner:hover {
+  background: #c4c24e ;
+  color: white;
+}
+// ##### bouton jaune
+
+// ##### bouton violet
+.btn-ma-boutique {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $violet_boutique;
+  transition: background 0.3s ease;
+}
+
+.btn-ma-boutique:hover {
+  background: #2c045f ;
+  color: white;
+}
+// ##### bouton violet
