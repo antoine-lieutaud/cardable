@@ -13,5 +13,9 @@ class RestaurantPolicy < ApplicationPolicy
     create?
   end
 
+  def show?
+    user == record.owner
+  end
+
 
 end
