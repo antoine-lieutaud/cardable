@@ -1,0 +1,14 @@
+<div class="form-container">
+<h1 class="form-h1">Create a voucher</h1>
+
+<%= simple_form_for [ Voucher.new ] do |i| %>
+  <%#= i.input :qr_code %>
+  <%= i.input :offer, collection: @offers %>
+  <%= i.input :limit_use %>
+  <%= i.input :limit_date%>
+  <%= i.submit "Create", class:"btn-block", id:"offer-submit" %>
+<% end %>
+<p>
+
+</p>
+</div>

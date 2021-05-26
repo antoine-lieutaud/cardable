@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
         @restaurant.owner = current_user
         @restaurant.save
         authorize @restaurant
-        redirect_to restaurant_path(@restaurant)
+        redirect_to root_path
       end
 
       def show
