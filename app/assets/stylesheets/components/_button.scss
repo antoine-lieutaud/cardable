@@ -62,3 +62,36 @@
   text-decoration: none;
 }
 // ##### bouton violet
+
+// ##### bouton validation
+
+.btn-validation {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $vert_validation;
+  transition: background 0.3s ease;
+}
+
+.btn-validation:hover {
+  background: #2b8004 ;
+  color: white;
+  text-decoration: none;
+}
+
+// ##### bouton validation
+
+.btn-home {
+  color: white;
+  border-radius: 4px;
+  background: $orange_dashboard;
+  transition: background 0.3s ease;
+  height: 50px;
+  width: 50px;
+}
+
+.btn-home:hover {
+  background: #be6703 ;
+  color: white;
+  text-decoration: none;
+}
