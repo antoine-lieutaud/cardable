@@ -1,1 +1,22 @@
 // Specific CSS for your home-page
+.dispatch-home-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 65px;
+}
+
+.container-home {
+  height: calc(100vh - 56px);
+}
+
+.help {
+  color: $rouge_coupon;
+  bottom: 15px;
+  height: 30px;
+  width: 30px;
+  display: inline-flex;
+  position: absolute;
+  right: 80px;
+  font-size: 22px;
+}
