@@ -11,10 +11,12 @@
     <% end %>
     <% @offers.each do |offer| %>
       <div class="col-3 py-2">
+
     <%= link_to "#{offer.description}", restaurant_offer_path(@restaurant, offer)%>
+
     <% end %>
     </div>
   </div>
-
-
+  
 <%= link_to "Nouvelle offre", new_restaurant_offer_path(@restaurant), class: "btn btn-primary" %>
+
