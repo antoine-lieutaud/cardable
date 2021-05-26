@@ -6,4 +6,12 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:new, :create, :show] do
     resources :offers, only: [:index, :new, :create]
   end
+
+  
+  resources :restaurants do
+    resources :vouchers, only: [:new]
+  end
+
+  resources :vouchers, only: [:create, :show]
+  
 end
