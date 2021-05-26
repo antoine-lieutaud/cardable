@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     resources :offers, only: [:index, :new, :create, :show]
   end
 
-  
+  get "dashboard", to: "dashboards#show", as: :dashboard
+
   resources :restaurants do
     resources :vouchers, only: [:new]
   end
