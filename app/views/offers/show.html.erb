@@ -1,6 +1,6 @@
-<h1><i class="description"></i><%= "#{@offer.description}" %></h1>
+<h1><i class="name"></i><%= "#{@offer.name}" %></h1>
+<p><i class="description"></i><%= "#{@offer.description}" %></p>
 <p><i class="price"></i><%= "#{@offer.price} €" %></p>
-<p><i class="numberofppl"></i><%= "#{@offer.restaurant_id}" %></p>
 <p><i class="state"></i><%= "#{@offer.state}" %></p>
 <a>
 <%= link_to "Retour", restaurant_offers_path(@restaurant), class:"btn btn-flat" %>
