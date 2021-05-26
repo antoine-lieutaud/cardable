@@ -12,10 +12,12 @@ class OffersController < ApplicationController
   end
 
   def create
+    @restaurant = Restaurant.find(params[:restaurant_id])
     @offer = Offer.new(offer_params)
-    @offer.restaurant = restaurant
+    @offer.restaurant = @restaurant
     @offer.save
     authorize @offer
+    redirect_to restaurant_offers_path(@restaurant)
   end
 
   #def edit
@@ -32,4 +34,11 @@ class OffersController < ApplicationController
   #  @offer = Offer.find(params[:id])
   #  autorize(@offer)
 # end
+
+
+private
+
+  def offer_params
+    params.require(:offer).permit(:price, :description, :restaurant, :state)
+  end
 end
