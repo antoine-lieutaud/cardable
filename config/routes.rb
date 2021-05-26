@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   end
 
   resources :vouchers, only: [:create, :show]
-  
+
 end
