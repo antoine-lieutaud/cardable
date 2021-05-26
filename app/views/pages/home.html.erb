@@ -20,13 +20,14 @@
         dashboard
       </div>
     </div>
-
+  <% link_to restaurant_offers_path(@restaurant) do %>
     <div class="btn-menu btn-violet">
       <%= image_tag 'shop (1).png',class:"btn-menu__icon" %>
       <div class="btn-menu__name">
      <%#= link_to "mes offres", restaurant_offers_path(@restaurant) %>
       </div>
     </div>
+  <% end %>
   </div>
   <div class="help">
     <span>help</span>   <%= image_tag 'question.png',class:"btn-menu__icon", class: "ml-3" %>
