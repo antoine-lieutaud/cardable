@@ -89,6 +89,7 @@
   transition: background 0.3s ease;
   height: 50px;
   width: 50px;
+  display: flex;
 }
 
 .btn-home:hover {
@@ -96,7 +97,11 @@
   color: white;
   text-decoration: none;
 }
-=======
+
+.btn-home__icon {
+  width: 75%;
+  margin: auto;
+}
 // ##### bouton card
 
 .btn-menu {
