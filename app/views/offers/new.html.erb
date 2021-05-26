@@ -2,10 +2,10 @@
 <h1 class="form-h1">Create your offer</h1>
 
 <%= simple_form_for [@restaurant, Offer.new ] do |i| %>
+  <%= i.input :name %>
   <%= i.input :price %>
   <%= i.input :description %>
-  <%= i.input :restaurant_id %>
-  <%= i.input :state %>
+  <%= i.input :validity, collection: (1..24).to_a, label:"période de validité (mois)" %>
   <%= i.submit "Create", class:"btn-block", id:"offer-submit" %>
 <% end %>
 <p>

@@ -20,6 +20,11 @@ class OffersController < ApplicationController
     redirect_to restaurant_offers_path(@restaurant)
   end
 
+  def show
+    @offer = Offer.find(params[:id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    authorize @offer
+  end
   #def edit
   #  @offer = Offer.find(params[:id])
   #  authorize @offer
