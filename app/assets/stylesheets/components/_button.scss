@@ -5,7 +5,7 @@
   border-radius: 4px;
   background: $orange_dashboard;
   transition: background 0.3s ease;
-  
+
 }
 
 .btn-dashboard:hover {
@@ -63,6 +63,7 @@
 }
 // ##### bouton violet
 
+
 // ##### bouton validation
 
 .btn-validation {
@@ -94,4 +95,50 @@
   background: #be6703 ;
   color: white;
   text-decoration: none;
+}
+=======
+// ##### bouton card
+
+.btn-menu {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  background-color: $jaune_scanner;
+  padding: 15px;
+}
+
+
+.btn-menu__icon {
+  width: 75%;
+  margin: auto;
+}
+
+.btn-menu__name {
+  margin: auto;
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: -9px;
+  line-height: 21px;
+  text-align: center;
+}
+
+.btn-yellow {
+  background-color: $jaune_scanner;
+}
+
+.btn-violet {
+  background-color: $violet_boutique;
+}
+
+.btn-red {
+  background-color: $rouge_coupon;
+}
+
+.btn-orange {
+  background-color: $orange_dashboard;
 }
