@@ -31,10 +31,10 @@ class OffersController < ApplicationController
     authorize @offer
   end
 
-  #def update
-  #  @offer = Offer.find(params[:id])
-  #  @offer.update(offer_params)
-  #end
+  def update
+    @offer = Offer.find(params[:id])
+    @offer.update(offer_params)
+  end
 
   #def delete
   #  @offer = Offer.find(params[:id])
