@@ -2,19 +2,13 @@
 <div class="container-fluid">
   <div class="row">
     <%= form_tag restaurant_offers_path(@restaurant), method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Nom de l'offre"
-    %>
-      <%= submit_tag "Rechercher", class: "btn btn-primary" %>
+      <%= link_to "Archive", class: "btn btn-primary" %>
       <%= link_to "Nouvelle offre", new_restaurant_offer_path(@restaurant), class: "btn btn-primary" %>
     <% end %>
     </div>
     <% @offers.each do |offer| %>
       <div>
     <%= link_to "#{offer.name}", restaurant_offer_path(@restaurant, offer)%>
-
     <% end %>
   </div>
 
