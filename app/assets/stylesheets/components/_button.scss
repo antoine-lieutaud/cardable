@@ -82,23 +82,27 @@
 
 // ##### bouton validation
 
-.btn-home {
+.btn-footer {
   color: white;
   border-radius: 4px;
-  background: $orange_dashboard;
+  background: $rouge_coupon;
   transition: background 0.3s ease;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   display: flex;
+  margin-bottom: 8px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.btn-home:hover {
+
+.btn-footer:hover {
   background: #be6703 ;
   color: white;
   text-decoration: none;
 }
 
-.btn-home__icon {
+.btn-footer__icon {
   width: 75%;
   margin: auto;
 }

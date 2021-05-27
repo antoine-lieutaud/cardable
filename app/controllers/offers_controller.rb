@@ -1,5 +1,5 @@
 class OffersController < ApplicationController
-
+  before_action :set_zone
   def index
     @restaurant = current_user.restaurants.find(params[:restaurant_id])
     @offers = policy_scope(@restaurant.offers)
@@ -41,10 +41,13 @@ class OffersController < ApplicationController
   #  autorize(@offer)
 # end
 
-
 private
 
   def offer_params
     params.require(:offer).permit(:price, :description, :restaurant, :state, :name)
+  end
+
+  def set_zone
+    @zone = "coupon"
   end
 end

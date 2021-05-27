@@ -5,17 +5,21 @@
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "Nom de l'offre"
-    %>
+      placeholder: "Nom de l'offre" %>
       <%= submit_tag "Rechercher", class: "btn btn-primary" %>
       <%= link_to "Nouvelle offre", new_restaurant_offer_path(@restaurant), class: "btn btn-primary" %>
     <% end %>
-    </div>
-    <% @offers.each do |offer| %>
-      <div>
-    <%= link_to "#{offer.name}", restaurant_offer_path(@restaurant, offer)%>
-    <%= link_to "Edit", edit_restaurant_offer_path(@restaurant) %>
-
-    <% end %>
   </div>
+  <div>
+    <% @offers.each do |offer| %>
+      <%= link_to "#{offer.name}", restaurant_offer_path(@restaurant, offer)%>
+    <% end %>
+</div>
 
+<% content_for :back_link do %>
+  <a href="<%= restaurant_offers_path(@restaurant) %>">
+    <div class="btn-footer">
+      <%= image_tag 'return.png',class:"btn-footer__icon" %>
+    </div>
+  </a>
+<% end %>
