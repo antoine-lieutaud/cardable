@@ -1,7 +1,7 @@
-class OffersController < ApplicationController
+class ArchivesController < ApplicationController
   def index
     @restaurant = current_user.restaurants.find(params[:restaurant_id])
-    @offers = policy_scope(@restaurant.offers).where(state: true)
+    @offers = policy_scope(@restaurant.offers)
   end
 
   def new
@@ -14,7 +14,7 @@ class OffersController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @offer = Offer.new(offer_params)
     @offer.restaurant = @restaurant
-    @offer.state = true
+    @offer.state = false
     @offer.save
     authorize @offer
     redirect_to restaurant_offers_path(@restaurant)
@@ -42,19 +42,11 @@ class OffersController < ApplicationController
 
   def destroy
     @offer = Offer.find(params[:id])
-    authorize @offer
     @offer.destroy
     redirect_to restaurant_offers_path(@offer.restaurant)
+    authorize @offer
   end
 
-  def archive
-    @restaurant = Restaurant.find(params[:restaurant_id])
-    @offer = @restaurant.offers.find(params[:id])
-    authorize @offer
-    @offer.state = false
-    @offer.save
-    redirect_to restaurant_offers_path(@offer.restaurant)
-  end
 
 private
 
