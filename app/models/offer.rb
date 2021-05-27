@@ -3,6 +3,6 @@ class Offer < ApplicationRecord
   has_many :vouchers
 
   def name
-    name
+    description
   end
 end
