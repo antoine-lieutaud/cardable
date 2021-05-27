@@ -1,28 +1,34 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "logo-cardable.png" %>
+<div class="menu">
+  <nav class="menu__nav">
+    <ul class="menu__list r-list">
+    <% if user_signed_in? %>
+      <li class="menu__group">
+        <%= link_to "Acceuil", root_path %>
+      </li>
+      <li class="menu__group">
+        <%= link_to "À propos", "#"%>
+      </li>
+      <li class="menu__group">
+      <%= link_to "Contacts", "#"%>
+      </li>
+        <li class="menu__group">
+          <%= link_to "Déconnexion", destroy_user_session_path, method: :delete %>
+        </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </li>
     <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-            <%= link_to "A propos de nous", "#", class: "nav-link" %>
-            <%= link_to "Contacts", "#", class: "nav-link" %>
-            <%= link_to "Déconnexion", destroy_user_session_path, method: :delete %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
     </ul>
-  </div>
+  </nav>
+  <button class="menu__toggle r-button" type="button">
+    <span class="menu__hamburger m-hamburger">
+      <span class="m-hamburger__label">
+        <span class="menu__screen-reader screen-reader">Open menu</span>
+      </span>
+    </span>
+  </button>
 </div>
+
+
