@@ -1,14 +1,11 @@
-<h2 class="index">MES OFFRES</h2>
-<div class="container-fluid">
-  <div class="row">
+<div class="container">
+  <h2 class="text-violet text-center mb-5">MES OFFRES</h2>
     <%= form_tag restaurant_offers_path(@restaurant), method: :get do %>
-      <%= link_to "offres archivées", class: "btn btn-primary" %>
-      <%= link_to "créer une offre", new_restaurant_offer_path(@restaurant), class: "btn btn-primary" %>
+      <%= link_to "offres archivées", "#", class: "btn-offre" %>
+      <%= link_to "créer une offre", new_restaurant_offer_path(@restaurant), class: "btn-offre" %>
     <% end %>
-    </div>
     <% @offers.each do |offer| %>
-      <div>
     <%= link_to "#{offer.name}", restaurant_offer_path(@restaurant, offer)%>
     <% end %>
-  </div>
+</div>
 
