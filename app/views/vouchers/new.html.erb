@@ -1,0 +1,14 @@
+<div class="form-container">
+<h1 class="form-h1">Nouveau coupon</h1>
+
+<%= simple_form_for [ Voucher.new ] do |i| %>
+  <%#= i.input :qr_code %>
+  <%= i.input :offer, collection: @offers, label:"FORMULE"  %>
+  <%= i.input :limit_use, label:"QUANTITE" %><%=  %>
+  <%= i.input :customer_email, label:"E-mail client"%>
+  <%= i.submit "VALIDER", class:"btn-block", id:"offer-submit" %>
+<% end %>
+<p>
+
+</p>
+</div>
