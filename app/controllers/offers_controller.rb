@@ -25,10 +25,11 @@ class OffersController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     authorize @offer
   end
-  #def edit
-  #  @offer = Offer.find(params[:id])
-  #  authorize @offer
-  #end
+
+  def edit
+    @offer = Offer.find(params[:id])
+    authorize @offer
+  end
 
   #def update
   #  @offer = Offer.find(params[:id])
@@ -44,6 +45,6 @@ class OffersController < ApplicationController
 private
 
   def offer_params
-    params.require(:offer).permit(:price, :description, :restaurant, :state)
+    params.require(:offer).permit(:price, :description, :restaurant, :state, :name)
   end
 end

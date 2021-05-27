@@ -8,13 +8,17 @@
       placeholder: "Nom de l'offre"
     %>
       <%= submit_tag "Rechercher", class: "btn btn-primary" %>
-    <% end %>
-    <% @offers.each do |offer| %>
-      <div class="col-3 py-2">
-    <%= link_to "#{offer.description}", restaurant_offer_path(@restaurant, offer)%>
+      <%= link_to "Nouvelle offre", new_restaurant_offer_path(@restaurant), class: "btn btn-primary" %>
     <% end %>
     </div>
+    <% @offers.each do |offer| %>
+      <div>
+    <%= link_to "#{offer.name}", restaurant_offer_path(@restaurant, offer)%>
+    <%= link_to "Edit", edit_restaurant_offer_path(@restaurant) %>
+
+
+    <% end %>
   </div>
 
 
-<%= link_to "Nouvelle offre", new_restaurant_offer_path(@restaurant), class: "btn btn-primary" %>
+
