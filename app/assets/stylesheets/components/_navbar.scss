@@ -276,7 +276,7 @@ MENU STATES
 
 .menu_activated{
   height: 100%;
-  z-index: 1000;
+  z-index: 99999999999;
 }
 
 .menu_activated .menu__nav{

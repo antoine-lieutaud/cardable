@@ -51,9 +51,23 @@
 .btn-offre {
   color: white;
   padding: 8px 24px;
-  border-radius: 4px;
   background: $violet_boutique;
   transition: background 0.3s ease;
+  border-radius: 20px;
+}
+
+.btn-offer-orga {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn-offre-show {
+  color: white;
+  background: $violet_boutique;
+  padding: 8px;
+  transition: background 0.3s ease;
+  border-radius: 20px;
+  font-size: 15px;
 }
 
 .btn-offre:hover {
@@ -74,13 +88,10 @@
   transition: background 0.3s ease;
   font-size: 25px;
   margin-top: 20px;
+  border-color: $vert_validation;
 }
 
-.btn-validation:hover {
-  background: #2b8004 ;
-  color: white;
-  text-decoration: none;
-}
+
 
 // ##### bouton validation
 
