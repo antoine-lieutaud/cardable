@@ -1,14 +1,14 @@
 <div class="form-container">
-<h1 class="form-h1">Créer une offre</h1>
+<h1 class="form-h1">Edit your offer</h1>
 
 <%= simple_form_for [@restaurant, Offer.new ] do |i| %>
   <%= i.input :name, label:"Nom de l'offre" %>
   <%= i.input :price, label:"Prix (pour 1 personne)"%>
   <%= i.input :description, label:"Description de l'offre"%>
   <%= i.input :validity, collection: [1,3,6,12,24], label:"Période de validité (mois)" %>
-  <%= i.submit "Create", class:"btn-block", id:"offer-submit" %>
+  <%= i.submit "Update", class:"btn-block", id:"offer-submit" %>
 <% end %>
 <p>
-
+    <%= link_to "Back", restaurant_offers_path(@restaurant) %>
 </p>
 </div>
