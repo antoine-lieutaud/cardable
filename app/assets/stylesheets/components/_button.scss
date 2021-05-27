@@ -68,10 +68,12 @@
 
 .btn-validation {
   color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
+  padding: 10px 55px;
+  border-radius: 10px;
   background: $vert_validation;
   transition: background 0.3s ease;
+  font-size: 25px;
+  margin-top: 20px;
 }
 
 .btn-validation:hover {
