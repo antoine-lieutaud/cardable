@@ -14,7 +14,6 @@
     <% @offers.each do |offer| %>
       <div>
     <%= link_to "#{offer.name}", restaurant_offer_path(@restaurant, offer)%>
-    <%= link_to "Edit", edit_restaurant_offer_path(@restaurant) %>
 
     <% end %>
   </div>
