@@ -9,3 +9,10 @@
     <% end %>
 </div>
 
+<% content_for :back_link do %>
+  <a href="<%= restaurant_offers_path(@restaurant) %>">
+    <div class="btn-footer">
+      <%= image_tag 'return.png',class:"btn-footer__icon" %>
+    </div>
+  </a>
+<% end %>
