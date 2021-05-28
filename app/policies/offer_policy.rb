@@ -36,4 +36,8 @@ class OfferPolicy < ApplicationPolicy
   def archive?
     true
   end
+
+  def active?
+    true
+  end
 end
