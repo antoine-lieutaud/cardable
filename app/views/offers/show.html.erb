@@ -1,9 +1,17 @@
 
 <h2 class="text-violet text-center mb-3 mt-2"><i></i><%= "#{@offer.name}" %></h2>
-  <div class="container">
-    <p class="description"><i></i><%= "#{@offer.description}" %></p>
-    <p class="description-price"><i class="price"></i><%= "#{@offer.price} €" %></p>
+  <div class="container center-offer">
+    <h4 class="text-center mb-2 mt-3">Description</h4>
+    <p class="description mb-4"><i></i><%= "#{@offer.description}" %></p>
+
+    <h4 class="text-center mb-2">Prix</h4>
+    <p class="description-price mb-4"><i class="price"></i><%= "#{@offer.price} €" %></p>
+
     <p><i class="state"></i><%= "#{@offer.state}" %></p>
+
+    <h4 class="text-center mb-2">Validité</h4>
+    <p class="validity text-center"><i></i><%= "#{@offer.validity} mois" %></p>
+
   </div>
 
 <a>

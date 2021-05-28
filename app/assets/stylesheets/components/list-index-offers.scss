@@ -25,17 +25,25 @@
   color: white;
 }
 
+.center-offer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .description {
-  display: grid;
+    background-color: #e5e2e2;
+    border-radius: 20px;
+    padding: 12px 24px;
+    grid-column-gap: 30px;
+}
+
+.validity {
   background-color: rgb(229, 226, 226);
   border-radius: 20px;
   padding: 8px 24px;
-  grid-column-gap: 30px;
-  grid-row-gap: 15px;
-  grid-template-columns: 1fr;
-  text-align: justify;
-}
+  margin-bottom: 100px;
 
+}
 .description-price {
   display: flex;
   color: white;
