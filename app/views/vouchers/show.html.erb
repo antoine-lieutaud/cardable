@@ -5,3 +5,4 @@
 <p><%= "Prix Total : #{@voucher.final_price}€" %></p>
 <p><%= "Crée le : #{@voucher.created_at}" %></p>
 <p><%= "Fin validité : #{@voucher.created_at + @voucher.offer.validity.months}" %></p>
+<p><%= "#{@voucher.offer.restaurant.name}" %></p>
