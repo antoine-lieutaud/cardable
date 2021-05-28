@@ -8,6 +8,7 @@
   grid-row-gap: 12px;
   justify-content: center;
 }
+
 .offer-card {
   display: flex;
   color: white;
@@ -32,30 +33,35 @@
 }
 .description {
     background-color: #e5e2e2;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 12px 24px;
     grid-column-gap: 30px;
+    font-size: 18px;
 }
 
 .validity {
+  display: flex;
   background-color: rgb(229, 226, 226);
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 8px 24px;
   margin-bottom: 100px;
-
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  font-size: 25px;
 }
 .description-price {
   display: flex;
   color: white;
-  padding: 10px 31px;
-  border-radius: 20px;
+  padding: 16px 31px;
+  border-radius: 10px;
   transition: background 0.3s ease;
   background-color: $violet_boutique;
   width: 100%;
   justify-content: center;
   color: white;
   opacity: 0.7;
-  width: fit-content;
   align-items: center;
+  font-size: 30px;
 }
 
