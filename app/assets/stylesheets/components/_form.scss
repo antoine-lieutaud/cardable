@@ -1,0 +1,45 @@
+.input-rounded-grey {
+  border-radius: 10px;
+  background: rgb(233, 227, 227);
+}
+
+.input-rounded-grey-description {
+  display: flex;
+  border-radius: 10px;
+  background: rgb(233, 227, 227);
+  height: 170px;
+  text-align: center;
+}
+
+.quantite {
+  width: 100%;
+  height: 100%;
+  background-color: $rouge_coupon;
+  border-radius: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 25px;
+
+}
+
+.btn-quantite {
+  height: 50px;
+  width: 50px;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 30px;
+}
+
+.font-24px {
+  font-size: 24px;
+}
+
+.voucher_offer label {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.voucher_customer_email label {
+  font-size: 24px;
+  margin-bottom: 20px;
+}

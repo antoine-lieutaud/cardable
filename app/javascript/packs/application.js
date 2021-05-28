@@ -27,9 +27,11 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { initNavbar } from '../plugins/navbar';
+import { scanQR } from '../plugins/scan_qr';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initNavbar();
+  scanQR();
 });

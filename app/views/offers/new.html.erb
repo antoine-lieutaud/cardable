@@ -1,11 +1,19 @@
-<div class="form-container">
-<h2 class="form-h1">Créer une offre</h2>
+<div class="container">
+<h1 class="text-violet text-center mb-5">Créer une offre</h2>
 
-<%= simple_form_for [@restaurant, Offer.new ] do |i| %>
-  <%= i.input :name, label:"Nom de la formule", placeholder: "Menu Saint-Valentin" %>
-  <%= i.input :price, label:"Prix", placeholder: "00,00€"%>
-  <%= i.input :description, label:"Description de l'offre", placeholder: "Décrivez l’offre ici"%>
-  <%= i.input :validity, collection: [1,3,6,12,24], label:"Période de validité (mois)"%>
-  <%= i.submit "CRÉER", class:"btn-block", id:"offer-submit" %>
+<%= simple_form_for [@restaurant, Offer.new ], html: {class: "text-center"} do |i| %>
+  <%= i.input :name, label:"Nom de l'offre", placeholder: "Menu Saint-Valentin", input_html: {class: "input-rounded-grey"} %>
+  <%= i.input :price, label:"Prix", placeholder: "00,00€", input_html: {class: "input-rounded-grey"} %>
+  <%= i.input :description, label:"Description", placeholder: "Décrivez l’offre ici", input_html: {class: "input-rounded-grey"} %>
+  <%= i.input :validity, collection: [1,3,6,12,24], label:"Période de validité (mois)", input_html: {class: "input-rounded-grey"} %>
+  <%= i.submit "CRÉER", class:"btn-validation border 0", id:"offer-submit" %>
 <% end %>
 </div>
+
+<% content_for :back_link do %>
+  <a href="<%= restaurant_offers_path(@restaurant) %>">
+    <div class="btn-footer">
+      <%= image_tag 'return.png',class:"btn-footer__icon" %>
+    </div>
+  </a>
+<% end %>

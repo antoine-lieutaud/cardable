@@ -1,0 +1,61 @@
+.list-offer-index {
+  margin-top: 30px;
+  display: grid;
+  align-items: center;
+  color: white;
+  text-align: center;
+  grid-column-gap: 5px;
+  grid-row-gap: 12px;
+  justify-content: center;
+}
+.offer-card {
+  display: flex;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+  background-color: rgb(145, 106, 172);
+  width: 100%;
+  justify-content: center;
+  color: white;
+  opacity: 0.7;
+}
+
+.offer-card a {
+  color: white;
+}
+
+.center-offer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.description {
+    background-color: #e5e2e2;
+    border-radius: 20px;
+    padding: 12px 24px;
+    grid-column-gap: 30px;
+}
+
+.validity {
+  background-color: rgb(229, 226, 226);
+  border-radius: 20px;
+  padding: 8px 24px;
+  margin-bottom: 100px;
+
+}
+.description-price {
+  display: flex;
+  color: white;
+  padding: 10px 31px;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+  background-color: $violet_boutique;
+  width: 100%;
+  justify-content: center;
+  color: white;
+  opacity: 0.7;
+  width: fit-content;
+  align-items: center;
+}
+

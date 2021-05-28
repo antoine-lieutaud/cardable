@@ -1,4 +1,6 @@
 class OffersController < ApplicationController
+  before_action :set_zone
+
   def index
     @restaurant = current_user.restaurants.find(params[:restaurant_id])
     @offers = policy_scope(@restaurant.offers).where(state: true)
@@ -47,6 +49,7 @@ class OffersController < ApplicationController
     redirect_to restaurant_offers_path(@offer.restaurant)
   end
 
+
   def archive
     @restaurant = Restaurant.find(params[:restaurant_id])
     @offer = @restaurant.offers.find(params[:id])
@@ -55,10 +58,16 @@ class OffersController < ApplicationController
     @offer.save
     redirect_to restaurant_offers_path(@offer.restaurant)
   end
-
+  
 private
 
   def offer_params
     params.require(:offer).permit(:price, :description, :restaurant, :state, :name, :validity)
+  scan-qr
+
+  end
+
+  def set_zone
+    @zone = "coupon"
   end
 end

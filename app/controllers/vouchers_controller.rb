@@ -1,4 +1,5 @@
 class VouchersController < ApplicationController
+  before_action :set_zone
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     @offers = @restaurant.offers
@@ -26,7 +27,7 @@ class VouchersController < ApplicationController
     # # @voucher.qr_code = qr.to_s
     # @voucher.save!
     redirect_to voucher_path(@voucher)
-    
+
   end
 
   def show
@@ -40,4 +41,7 @@ class VouchersController < ApplicationController
     params.require(:voucher).permit(:limit_use, :customer_email)
   end
 
+  def set_zone
+    @zone = "scann"
+  end
 end

@@ -48,15 +48,29 @@
 // ##### bouton jaune
 
 // ##### bouton violet
-.btn-ma-boutique {
+.btn-offre {
   color: white;
   padding: 8px 24px;
-  border-radius: 4px;
   background: $violet_boutique;
   transition: background 0.3s ease;
+  border-radius: 20px;
 }
 
-.btn-ma-boutique:hover {
+.btn-offer-orga {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn-offre-show {
+  color: white;
+  background: $violet_boutique;
+  padding: 8px;
+  transition: background 0.3s ease;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+.btn-offre:hover {
   background: #2c045f ;
   color: white;
   text-decoration: none;
@@ -68,37 +82,39 @@
 
 .btn-validation {
   color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
+  padding: 10px 55px;
+  border-radius: 10px;
   background: $vert_validation;
   transition: background 0.3s ease;
+  font-size: 25px;
+  margin-top: 20px;
 }
 
-.btn-validation:hover {
-  background: #2b8004 ;
-  color: white;
-  text-decoration: none;
-}
+
 
 // ##### bouton validation
 
-.btn-home {
+.btn-footer {
   color: white;
   border-radius: 4px;
-  background: $orange_dashboard;
+  background: $rouge_coupon;
   transition: background 0.3s ease;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   display: flex;
+  margin-bottom: 8px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.btn-home:hover {
+
+.btn-footer:hover {
   background: #be6703 ;
   color: white;
   text-decoration: none;
 }
 
-.btn-home__icon {
+.btn-footer__icon {
   width: 75%;
   margin: auto;
 }

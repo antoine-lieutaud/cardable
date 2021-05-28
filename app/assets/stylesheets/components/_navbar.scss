@@ -1,3 +1,42 @@
+.footer-orga {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &.coupon {
+    .btn-footer {
+      background-color: $violet_boutique ;
+    }
+    .menu {
+      --uiMenuCircleBackgroundColor: #6C4EAA;
+    }
+  }
+
+  &.sacnn {
+    .btn-footer {
+      background-color: $jaune_scanner ;
+    }
+    :root{
+      --uiMenuCircleBackgroundColor: #F8C347;
+    }
+  }
+  &.dashboard {
+    .btn-footer {
+      background-color: $orange_dashboard ;
+    }
+    .menu {
+      --uiMenuCircleBackgroundColor: #FE904B;
+    }
+  }
+}
+
+
+
+
 .r-button{
   --uirButtonBackgroundColor: var(--rButtonBackgroundColor, transparent);
   --uirButtonPadding: var(--rButtonPadding, var(--rButtonPaddingTop, 0) var(--rButtonPaddingRight, 0) var(--rButtonPaddingBottom, 0) var(--rButtonPaddingLeft, 0));
@@ -7,6 +46,7 @@
   --uirButtonFontFamily: var(--rButtonFontFamily, inherit);
   --uirButtonFontSize: var(--rButtonFontSize,  inherit);
   --uirButtonColor: var(--rButtonColor);
+  background-color: $rouge_coupon;
 
   background-color: var(--uirButtonBackgroundColor);
   padding: var(--uirButtonPadding);
@@ -125,6 +165,7 @@ MENU STYLES
   --uiMenuCircleOffset: var(--menuCircleOffset, 1rem);
   --uiMenuCircleHeight: calc(var(--uiMenuCircleSize) / 2);
   --uiMenuCircleBackgroundColor: var(--menuCircleBackgroundColor, currentColor);
+  --uiMenuCircleBackgroundColorViolet: $violet_boutique;
 
   --uiMenuHamburgerWidth: var(--menuHamburgerWidth, 1.75rem);
   --uiMenuHamburgerHeight: var(--menuHamburgerHeight, 1.25rem);
@@ -136,15 +177,14 @@ MENU STYLES
   --hamburgerBackgroundColor: var(--menuHamburgerBackgroundColor, #fff);
 
   width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  text-decoration: none;
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: var(--menuZindex, 9998);
+  z-index: -1;
 }
 
 .menu__nav{
@@ -154,7 +194,8 @@ MENU STYLES
 
   transition: opacity .2s ease-out;
   opacity: 0;
-
+  text-decoration: none;
+  color: #fff;
   display: flex;
   align-items: flex-end;
   z-index: 2;
@@ -163,7 +204,8 @@ MENU STYLES
 .menu__list{
   width: 100%;
   max-height: 100%;
-
+  text-decoration: none;
+  color: #fff;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -234,6 +276,7 @@ MENU STATES
 
 .menu_activated{
   height: 100%;
+  z-index: 99999999999;
 }
 
 .menu_activated .menu__nav{
@@ -277,13 +320,7 @@ SETTINGS
 =====
 */
 
-:root{
-  --colorWhite: #fff;
-  --colorMain: #4557bb;
-  --menuCircleBackgroundColor: var(--colorMain);
-  --menuHamburgerBackgroundColor: var(--colorWhite);
-  --menuHaburgerOutlineColor: var(--colorMain);
-}
+
 
 .menu_activated{
   --menuHaburgerOutlineColor: var(--colorWhite);
@@ -295,6 +332,13 @@ DEMO
 =====
 */
 
+:root{
+  --colorWhite: #fff;
+  --colorMain: #F26464;
+  --menuCircleBackgroundColor: var(--colorMain);
+  --menuHamburgerBackgroundColor: var(--colorWhite);
+  --menuHaburgerOutlineColor: var(--colorMain);
+}
 
 .page{
   max-width: 380px;

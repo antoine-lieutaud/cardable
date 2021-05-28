@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 2021_05_27_151042) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "customer_email"
+    t.integer "final_price"
     t.index ["offer_id"], name: "index_vouchers_on_offer_id"
   end
 

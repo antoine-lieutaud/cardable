@@ -12,15 +12,15 @@ class ApplicationController < ActionController::Base
     flash[:alert] = "You are not authorized to perform this action."
     redirect_to(root_path)
   end
-  
+
   def after_sign_in_path_for(resource)
     if resource.restaurants.any?
-      restaurant_path(resource.restaurants.first)
+      root_path(resource.restaurants.first)
     else
       new_restaurant_path
     end
   end
-  
+
   def after_sign_up_path_for(resource)
     restaurant_path(resource.restaurants.first)
   end
@@ -30,5 +30,4 @@ class ApplicationController < ActionController::Base
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
-
 end
