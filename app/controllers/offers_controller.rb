@@ -53,7 +53,6 @@ class OffersController < ApplicationController
     redirect_to restaurant_offers_path(@offer.restaurant)
   end
 
-
   def archive
     @restaurant = Restaurant.find(params[:restaurant_id])
     @offer = @restaurant.offers.find(params[:id])
@@ -63,10 +62,20 @@ class OffersController < ApplicationController
     redirect_to restaurant_offers_path(@offer.restaurant)
   end
 
-private
+  def active
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @offer = @restaurant.offers.find(params[:id])
+    authorize @offer
+    @offer.state = true
+    @offer.save
+    redirect_to restaurant_offers_path(@offer.restaurant)
+  end
+  
+  private
 
   def offer_params
     params.require(:offer).permit(:price, :description, :restaurant, :state, :name, :validity)
+
     #scan-qr
   end
 
