@@ -1,0 +1,16 @@
+<div>
+  <h2><i class="name"></i><%= "#{@offer.name}" %></h2>
+</div>
+<div>
+  <p><i class="description"></i>Description<br><%="#{@offer.description}" %></p>
+  <p><i class="price"></i>Prix<br><%= "#{@offer.price} €" %></p>
+  <p><i class="validity"></i>Date d'expiration<br><%="#{@offer.validity}"%> mois</p>
+  <p><i class="state"></i>Etat<br><%="#{@offer.state}"%></p>
+
+</div>
+
+<a>
+  <%= link_to "Modifier", edit_restaurant_offer_path(@restaurant) %>
+  <%= link_to "Supprimer", restaurant_offer_path(@restaurant), method: :delete, data: { confirm: 'Etes-vous sûr de vouloir supprimer la formule "' "#{@offer.name}" '" ?' } %>
+  <%= link_to "Archiver", archive_restaurant_offer_path(@restaurant, @offer), class:"btn btn-flat" %>
+</a>

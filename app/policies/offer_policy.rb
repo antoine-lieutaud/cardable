@@ -32,4 +32,8 @@ class OfferPolicy < ApplicationPolicy
   def destroy?
     true
   end
+
+  def archive?
+    true
+  end
 end
