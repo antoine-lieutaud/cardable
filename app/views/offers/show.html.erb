@@ -3,24 +3,20 @@
   <div class="container center-offer">
     <h4 class="text-center mb-2 mt-3">Description</h4>
     <p class="description mb-4"><i></i><%= "#{@offer.description}" %></p>
-
     <h4 class="text-center mb-2">Prix</h4>
     <p class="description-price mb-4"><i class="price"></i><%= "#{@offer.price} €" %></p>
-
     <p><i class="state"></i><%= "#{@offer.state}" %></p>
-
     <h4 class="text-center mb-2">Validité</h4>
     <p class="validity text-center"><i></i><%= "#{@offer.validity} mois" %></p>
-
   </div>
 
-<a>
   <div class="btn-offer-orga">
     <%= link_to "Modifier", edit_restaurant_offer_path(@restaurant), class: "btn-offre-show" %>
     <%= link_to "Supprimer", restaurant_offer_path(@restaurant), method: :delete, data: { confirm: 'Etes-vous sûr de vouloir supprimer la formule "' "#{@offer.name}" '" ?' }, class: "btn-offre-show" %>
-    <%= link_to "Archiver", archive_restaurant_offer_path(@restaurant, @offer), method: :patch, data: { confirm: 'Etes-vous sûr de vouloir supprimer la formule "' "#{@offer.name}" '" ?' }, class: "btn-offre-show" %>
+    <%= link_to "Archiver", archive_restaurant_offer_path(@restaurant, @offer), method: :patch, data: { confirm: 'Etes-vous sûr de vouloir archiver la formule "' "#{@offer.name}" '" ?' }, class: "btn-offre-show" %>
    </div>
 </a>
+
 
 <% content_for :back_link do %>
   <a href="<%= restaurant_offers_path(@restaurant) %>">
