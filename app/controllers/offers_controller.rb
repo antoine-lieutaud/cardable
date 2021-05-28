@@ -3,7 +3,11 @@ class OffersController < ApplicationController
 
   def index
     @restaurant = current_user.restaurants.find(params[:restaurant_id])
-    @offers = policy_scope(@restaurant.offers).where(state: true)
+    if params[:archived ] == "true"
+      @offers = policy_scope(@restaurant.offers).where(state: false)
+    else
+      @offers = policy_scope(@restaurant.offers).where(state: true)
+    end
   end
 
   def new
@@ -58,7 +62,7 @@ class OffersController < ApplicationController
     @offer.save
     redirect_to restaurant_offers_path(@offer.restaurant)
   end
-  
+
 private
 
   def offer_params
