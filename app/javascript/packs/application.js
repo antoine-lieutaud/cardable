@@ -35,3 +35,5 @@ document.addEventListener('turbolinks:load', () => {
   initNavbar();
   scanQR();
 });
+
+import "controllers"
