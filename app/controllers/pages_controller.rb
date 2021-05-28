@@ -3,6 +3,9 @@ class PagesController < ApplicationController
     @restaurant = Restaurant.find_by(user_id: current_user.id)
   end
 
+  def scan
+  end
+
   def components
   end
 end

@@ -1,6 +1,8 @@
 <div class="container d-flex align-items-center justify-content-center container-home">
   <div class="dispatch-home-menu">
-    <%= link_to '#' do %>
+    <input type="file" accept="image/*" capture="camera" />
+
+    <%= link_to scan_path do %>
       <div class="btn-menu btn-yellow">
         <%= image_tag 'qr-code.png',class:"btn-menu__icon" %>
         <div class="btn-menu__name">

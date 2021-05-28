@@ -51,6 +51,8 @@ private
 
   def offer_params
     params.require(:offer).permit(:price, :description, :restaurant, :state, :name, :validity)
+  scan-qr
+
   end
 
   def set_zone

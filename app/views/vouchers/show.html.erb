@@ -1,2 +1,7 @@
 
 <p><%= @voucher.qr_code.html_safe %></p>
+<p><%= "Offre : #{@voucher.offer.name}" %></p>
+<p><%= "Validité : #{@voucher.offer.validity}" %></p>
+<p><%= "Prix Total : #{@voucher.final_price}€" %></p>
+<p><%= "Crée le : #{@voucher.created_at}" %></p>
+<p><%= "Fin validité : #{@voucher.created_at + @voucher.offer.validity.months}" %></p>
