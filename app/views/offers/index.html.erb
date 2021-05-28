@@ -2,7 +2,7 @@
   <h2 class="text-violet text-center mb-3 mt-2">MES OFFRES</h2>
     <%= form_tag restaurant_offers_path(@restaurant), method: :get, class: "btn-offer-orga" do %>
       <%= link_to "offres archivées", restaurant_offers_path(@restaurant, archived: true), class: "btn-offre" %>
-      <%= link_to "créer", new_restaurant_offer_path(@restaurant), class: "btn-offre" %>
+      <%= link_to "créer une offre", new_restaurant_offer_path(@restaurant), class: "btn-offre" %>
     <% end %>
 </div>
 <div class="list-offer-index">
@@ -12,11 +12,3 @@
     </div>
   <% end %>
 </div>
-
-<% content_for :back_link do %>
-  <a href="/">
-    <div class="btn-footer">
-      <%= image_tag 'return.png',class:"btn-footer__icon" %>
-    </div>
-  </a>
-<% end %>
