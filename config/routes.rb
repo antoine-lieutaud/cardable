@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:new, :create, :show] do
     resources :offers, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
       member do
-        patch :archive
+        patch :archive, :active
       end
     end
   end

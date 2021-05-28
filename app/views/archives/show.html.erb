@@ -12,5 +12,7 @@
 <a>
   <%= link_to "Modifier", edit_restaurant_offer_path(@restaurant) %>
   <%= link_to "Supprimer", restaurant_offer_path(@restaurant), method: :delete, data: { confirm: 'Etes-vous sûr de vouloir supprimer la formule "' "#{@offer.name}" '" ?' } %>
-  <%= link_to "Archiver", archive_restaurant_offer_path(@restaurant, @offer), class:"btn btn-flat" %>
+
+  <%= link_to "Activer", archive_restaurant_offer_path(@restaurant, @offer), class:"btn btn-flat" %>
+
 </a>
