@@ -18,6 +18,6 @@ export default class extends Controller {
 
   computeTotalPrice(quantity) {
     const totalPrice = quantity * this.offerPriceValue;
-    this.priceTarget.innerText = `Prix: ${totalPrice}`;
+    this.priceTarget.innerText = totalPrice;
   }
 }

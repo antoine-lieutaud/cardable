@@ -1,3 +1,4 @@
+
 <div class="container-voucher-info">
   <p class="text-center mb-2"><%= "Offre : #{@voucher.offer.name}" %></p>
   <p class="text-center mb-2"><%= "Prix Total : #{@voucher.final_price}€" %></p>
@@ -9,5 +10,3 @@
 <div class= "qrcode">
   <%= @voucher.qr_code.html_safe %>
 </div>
-
-
