@@ -1,9 +1,12 @@
-<div class="container">
-  <p><%= "#{@voucher.offer.restaurant.name}" %></p>
+
+<div class="container-voucher-info">
   <p class="text-center mb-2"><%= "Offre : #{@voucher.offer.name}" %></p>
   <p class="text-center mb-2"><%= "Prix Total : #{@voucher.final_price}€" %></p>
   <p class="text-center mb-2"><%= "Période de validité : #{@voucher.offer.validity}mois" %></p>
   <p class="text-center mb-2"><%= "A partir du : #{@voucher.created_at}" %></p>
   <p class="text-center mb-2"><%= "Fin validité : #{@voucher.created_at + @voucher.offer.validity.months}" %></p>
-  <p><%= @voucher.qr_code.html_safe %></p>
+</div>
+
+<div class= "qrcode">
+  <%= @voucher.qr_code.html_safe %>
 </div>
