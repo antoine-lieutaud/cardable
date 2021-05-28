@@ -5,7 +5,6 @@
   border-radius: 4px;
   background: $orange_dashboard;
   transition: background 0.3s ease;
-
 }
 
 .btn-dashboard:hover {
@@ -50,10 +49,11 @@
 // ##### bouton violet
 .btn-offre {
   color: white;
-  padding: 8px 24px;
+  padding: 8px 14px;
   background: $violet_boutique;
   transition: background 0.3s ease;
-  border-radius: 20px;
+  border-radius: 10px;
+  font-size: 18px;
 }
 
 .btn-offer-orga {
@@ -64,10 +64,10 @@
 .btn-offre-show {
   color: white;
   background: $violet_boutique;
-  padding: 8px;
+  padding: 12px;
   transition: background 0.3s ease;
-  border-radius: 20px;
-  font-size: 15px;
+  border-radius: 10px;
+  font-size: 20px;
 }
 
 .btn-offre:hover {
