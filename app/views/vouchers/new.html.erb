@@ -10,7 +10,7 @@
         <div class="d-flex justify-content-between w-75 mx-auto mt-3">
           <div class="d-flex align-items-center justify-content-center text-rouge btn-quantite" id="btMoins" data-action="click->quantity-counter#minus">-
           </div>
-          <div class="d-flex align-items-center justify-content-center" id="number" data-quantity-counter-target="number">0
+          <div class="d-flex align-items-center justify-content-center font-24px" id="number" data-quantity-counter-target="number">0
           </div>
           <div class="d-flex align-items-center justify-content-center text-rouge btn-quantite" id="btPlus"  data-action="click->quantity-counter#plus">+
           </div>
@@ -19,8 +19,10 @@
     
       <%= i.input :limit_use, label:"QUANTITE", wrapper_html: {class: "d-none"}, input_html: {data: {quantity_counter_target: "input", price_target: "quantity"}} %>
     </div>
-    <div class="d-flex justify-content-between w-75 mx-auto mt-3" id="priceCount" data-price-target="price">Prix:€
+    <p class="text-center font-24px">Prix:</p>
+    <div class="mb-4 font-24px" id="priceCount" data-price-target="price">
     </div>
+    <p class="text-center font-24px">€</p>
     <%= i.input :customer_email, label:"E-mail client", input_html: {class: "input-rounded-grey"} %>
     <%= i.submit "VALIDER", class:"btn-validation  border 0", id:"offer-submit" %>
   <% end %>
