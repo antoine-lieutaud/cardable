@@ -1,8 +1,24 @@
-<h1><i class="name"></i><%= "#{@offer.name}" %></h1>
-<p><i class="description"></i><%= "#{@offer.description}" %></p>
-<p><i class="price"></i><%= "#{@offer.price} €" %></p>
-<p><i class="state"></i><%= "#{@offer.state}" %></p>
+
+<h2 class="text-violet text-center mb-3 mt-2"><i></i><%= "#{@offer.name}" %></h2>
+  <div class="container">
+    <p class="description"><i></i><%= "#{@offer.description}" %></p>
+    <p class="description-price"><i class="price"></i><%= "#{@offer.price} €" %></p>
+    <p><i class="state"></i><%= "#{@offer.state}" %></p>
+  </div>
+
 <a>
-<%= link_to "Edit", edit_restaurant_offer_path(@restaurant) %>
-<%= link_to "Retour", restaurant_offers_path(@restaurant), class:"btn btn-flat" %>
+  <div class="btn-offer-orga">
+    <%= link_to "Modifier", edit_restaurant_offer_path(@restaurant), class: "btn-offre-show " %>
+    <%= link_to "Supprimer", restaurant_offer_path(@restaurant), method: :delete, data: { confirm: 'Etes-vous sûr de vouloir supprimer la formule "' "#{@offer.name}" '" ?'}, class: "btn-offre-show "  %>
+    <%= link_to "Archiver", restaurant_offers_path(@restaurant), class: "btn-offre-show " %>
+  </div>
 </a>
+<% content_for :back_link do %>
+  <a href="<%= restaurant_offers_path(@restaurant) %>">
+    <div class="btn-footer">
+      <%= image_tag 'return.png',class:"btn-footer__icon" %>
+    </div>
+  </a>
+<% end %>
+
+

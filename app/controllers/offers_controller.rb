@@ -1,5 +1,5 @@
 class OffersController < ApplicationController
-
+  before_action :set_zone
   def index
     @restaurant = current_user.restaurants.find(params[:restaurant_id])
     @offers = policy_scope(@restaurant.offers)
@@ -27,24 +27,35 @@ class OffersController < ApplicationController
   end
 
   def edit
-    @offer = Offer.find(params[:id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @offer = @restaurant.offers.find(params[:id])
     authorize @offer
   end
 
   def update
-    @offer = Offer.find(params[:id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @offer = @restaurant.offers.find(params[:id])
+    authorize @offer
     @offer.update(offer_params)
+    redirect_to restaurant_offer_path(@restaurant, @offer)
   end
 
-  #def delete
-  #  @offer = Offer.find(params[:id])
-  #  autorize(@offer)
-# end
-
+  def destroy
+    @offer = Offer.find(params[:id])
+    @offer.destroy
+    redirect_to restaurant_offers_path(@offer.restaurant)
+    authorize @offer
+  end
 
 private
 
   def offer_params
     params.require(:offer).permit(:price, :description, :restaurant, :state, :name, :validity)
+  scan-qr
+
+  end
+
+  def set_zone
+    @zone = "coupon"
   end
 end
