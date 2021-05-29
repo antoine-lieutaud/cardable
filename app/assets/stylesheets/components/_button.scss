@@ -45,6 +45,17 @@
   color: white;
   text-decoration: none;
 }
+
+.btn-redeem {
+  color: white;
+  padding: 12px 30px;
+  border-radius: 10px;
+  background: $jaune_scanner;
+  transition: background 0.3s ease;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+
 // ##### bouton jaune
 
 // ##### bouton violet
