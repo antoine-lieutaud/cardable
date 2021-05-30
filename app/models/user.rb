@@ -7,4 +7,11 @@ class User < ApplicationRecord
 
   has_many :restaurants
   has_many :staffs
+
+  private
+
+  def send_welcome_email
+    UserMailer.with(user: self).welcome.deliver_now
+  end
+  
 end
