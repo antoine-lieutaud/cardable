@@ -3,7 +3,7 @@
 
   <%= simple_form_for [ Voucher.new ], html: {class: "text-center", data: { controller: "price", price_offers_value: @offers.pluck(:id, :price).to_h, price_offer_price_value: ""} } do |i| %>
     <%#= i.input :qr_code %>
-    <%= i.input :offer, collection: @offers, label:"FORMULE:", input_html: {class: "input-rounded-grey", data: { action: "change->price#changePrice"}}  %>
+    <%= i.input :offer, collection: @offers, label:"FORMULE:", input_html: {class: "input-rounded-grey"}  %>
     <div class="container quantite" data-controller="quantity-counter">
       <div class="text-center text-white">
       <p class="font-24px">QUANTITE</p>
