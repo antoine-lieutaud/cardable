@@ -11,10 +11,10 @@ const scanQR = () => {
     // scanner.start();
     scanner.start()
     .then(
-      () => this.hasCamera = true,
+      // () => this.hasCamera = true,
       (error) => {
           console.log(error);
-          this.hasCamera = false;
+          // this.hasCamera = false;
       }
     );
   }
