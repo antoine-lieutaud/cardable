@@ -8,7 +8,15 @@ const scanQR = () => {
   const video = document.getElementById('qr-video');
   if (video) {
     const scanner = new QrScanner(video, successCallback, failureCallback)
-    scanner.start();
+    // scanner.start();
+    scanner.start()
+    .then(
+      () => this.hasCamera = true,
+      (error) => {
+          console.log(error);
+          this.hasCamera = false;
+      }
+    );
   }
 }
 
