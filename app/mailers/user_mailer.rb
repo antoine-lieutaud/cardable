@@ -5,10 +5,8 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome.subject
   #
-  def welcome(user)
-    @greeting = "Hi"
-    @user = user
-
-    mail to: user.email, subject: "Welcome to Le Wagon"
+  default from:'yourmail@domain.com'
+  def send_welcome(user)
+    mail(to: user.email, subject: “Welcome”)
   end
 end
