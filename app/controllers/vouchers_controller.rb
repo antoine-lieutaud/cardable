@@ -34,6 +34,15 @@ class VouchersController < ApplicationController
     authorize @voucher
   end
 
+  def index
+    if params[:query].present?
+      @vouchers = Voucher.where("customer_email ILIKE ?", "%#{params[:query]}%")
+    else
+      @vouchers = Voucher.all
+    end
+    @vouchers = policy_scope(Voucher)
+  end
+
   private
 
   def voucher_params

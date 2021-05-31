@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="text-rouge text-center mb-5">Nouveau coupon</h1>
+  <h1 class="text-rouge text-center mb-3">Nouveau coupon</h1>
 
   <%= simple_form_for [ Voucher.new ], html: {class: "text-center", data: { controller: "price", price_offers_value: @offers.pluck(:id, :price).to_h, price_offer_price_value: ""} } do |i| %>
     <%#= i.input :qr_code %>
@@ -19,10 +19,10 @@
     
       <%= i.input :limit_use, label:"QUANTITE", wrapper_html: {class: "d-none"}, input_html: {data: {quantity_counter_target: "input", price_target: "quantity"}} %>
     </div>
-    <p class="text-center font-24px">Prix:</p>
-    <div class="mb-4 font-24px" id="priceCount" data-price-target="price">
+    <p class="text-center font-20px">Prix:</p>
+    <div class="mb-4 font-30px" id="priceCount" data-price-target="price">
     </div>
-    <p class="text-center font-24px">€</p>
+    <p class="text-center font-20px">€</p>
     <%= i.input :customer_email, label:"E-mail client", input_html: {class: "input-rounded-grey"} %>
     <%= i.submit "VALIDER", class:"btn-validation  border 0", id:"offer-submit" %>
   <% end %>
