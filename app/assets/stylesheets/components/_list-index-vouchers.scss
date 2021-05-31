@@ -15,7 +15,7 @@
   padding: 8px 24px;
   border-radius: 10px;
   transition: background 0.3s ease;
-  background-color: rgb(145, 106, 172);
+  background-color: $orange_dashboard;
   width: 100%;
   justify-content: center;
   color: white;
@@ -23,5 +23,27 @@
 }
 
 .voucher-card a {
+  color: white;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-container .search-input {
+  height: 50px;
+  background-color: $orange_dashboard;
+  color: white;
+  &::placeholder {
+    color: white;
+  }
+}
+
+.search-container .search-icon {
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  right: 20px;
+  height: 34px;
   color: white;
 }
