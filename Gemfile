@@ -33,6 +33,7 @@ gem "rqrcode", "~> 2.0"
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
+gem 'addressable', '~> 2.7'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
