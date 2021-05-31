@@ -16,5 +16,4 @@ class VoucherPolicy < ApplicationPolicy
   def show?
     true
   end
-
 end

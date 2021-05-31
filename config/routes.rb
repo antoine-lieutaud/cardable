@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :vouchers, only: [:new]
   end
 
-  resources :vouchers, only: [:create, :show]
+  resources :vouchers, only: [:index, :create, :show]
 
   get "scan", to: "pages#scan"
 
