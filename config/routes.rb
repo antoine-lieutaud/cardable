@@ -19,6 +19,11 @@ Rails.application.routes.draw do
 
   resources :vouchers, only: [:create, :show]
 
+  resources :vouchers do
+    resources :redeems, only: [:new, :create]
+  end
+    
+
   get "scan", to: "pages#scan"
 
 end
