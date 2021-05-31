@@ -1,8 +1,10 @@
+<div style="border: 10px solid black; padding: 20px; width: 90%; margin: 0 auto;">
+
 <%="Hello, #{@voucher.customer_email}" %>
 
-<br/>
+<p style="color: red;">
 Vous avez reçu un coupon cadeau vous permettant de profiter de l'offre suivante : <%=@voucher.offer.description%>
-<br/>
+</p>
 
 <br/>
 Au restaurant : <%=@voucher.offer.restaurant.name%>
@@ -10,10 +12,12 @@ Au restaurant : <%=@voucher.offer.restaurant.name%>
 
 
 <br/>
-Votre coupon est valable jusquau <%=@voucher.expiration_date%>
+Votre coupon est valable `jusqu'au` <%=@voucher.expiration_date%>
 <br/>
+<div style="width: 200px; margin: 0 auto; height:200px;">
 <%= @voucher.qr_code.html_safe %>
+</div>
 <br/>
 
-From,
-Cardable
+A bientôt, <%=@voucher.offer.restaurant.name%>
+</div>

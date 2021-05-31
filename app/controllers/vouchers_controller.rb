@@ -20,7 +20,8 @@ class VouchersController < ApplicationController
       shape_rendering: "crispEdges",
       module_size: 11,
       standalone: true,
-      use_path: true
+      use_path: true,
+      viewbox: true
     )
     @voucher.update(qr_code: qr)
     # # @voucher.save
