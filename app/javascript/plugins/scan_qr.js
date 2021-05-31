@@ -19,7 +19,6 @@ const successCallback = (result) => {
   if (message) {
     message.innerText = result;
   }
-  document.getElementById("console").innerText = result;
   window.location.replace(result);
 }
 
@@ -30,7 +29,6 @@ const failureCallback = (result) => {
   if (message) {
     message.innerText = result;
   }
-  document.getElementById("console").innerText = result;
 }
 
 export { scanQR };
