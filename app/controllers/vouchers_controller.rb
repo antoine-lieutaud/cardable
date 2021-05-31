@@ -27,12 +27,19 @@ class VouchersController < ApplicationController
     # # @voucher.qr_code = qr.to_s
     # @voucher.save!
     redirect_to voucher_path(@voucher)
-
   end
 
   def show
     @voucher = Voucher.find(params[:id])
     authorize @voucher
+  end
+
+  def index
+    if params[:query].present?
+      @vouchers = policy_scope(Voucher).where("customer_email ILIKE ?", "%#{params[:query]}%")
+    else
+      @vouchers = policy_scope(Voucher).all
+    end
   end
 
   private

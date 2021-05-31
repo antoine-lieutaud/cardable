@@ -11,7 +11,7 @@ class Voucher < ApplicationRecord
   def update_price
     total_voucher_price = self.offer.price * self.limit_use
     self.update(final_price: total_voucher_price)
-  end 
+  end
 
   def generate_qrcode
     qr = RQRCode::QRCode.new(Rails.application.routes.url_helpers.voucher_path(self))

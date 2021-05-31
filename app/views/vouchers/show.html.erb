@@ -1,7 +1,43 @@
+   <% ending_date = @voucher.created_at + @voucher.offer.validity.months %>
 
-<p><%= @voucher.qr_code.html_safe %></p>
-<p><%= "Offre : #{@voucher.offer.name}" %></p>
-<p><%= "Validité : #{@voucher.offer.validity}" %></p>
-<p><%= "Prix Total : #{@voucher.final_price}€" %></p>
-<p><%= "Crée le : #{@voucher.created_at}" %></p>
-<p><%= "Fin validité : #{@voucher.created_at + @voucher.offer.validity.months}" %></p>
+   <% if ending_date < Date.today %>
+      <% voucher_status = 'périmé' %>
+   <% elsif @voucher.limit_use - @voucher.nb_redeems == 0 %>
+      <% voucher_status = 'consommé' %>
+   <% else %>
+      <% voucher_status = 'valide'%>
+   <% end %>
+
+<% if @voucher.limit_use - @voucher.nb_redeems > 0 %>
+  <div class="container-voucher-info">
+    <p class="text-center mb-2"><%= "Utilisations restantes : #{@voucher.limit_use - @voucher.nb_redeems}" %></p>
+    <p class="text-center mb-2"><%= "Offre : #{@voucher.offer.name}" %></p>
+    <p class="text-center mb-2"><%= "Prix Total : #{@voucher.final_price}€" %></p>
+    <p class="text-center mb-2"><%= "Période de validité : #{@voucher.offer.validity}mois" %></p>
+    <p class="text-center mb-2"><%= "A partir du : #{@voucher.created_at}" %></p>
+    <p class="text-center mb-2"><%= "Fin validité : #{@voucher.created_at + @voucher.offer.validity.months}" %></p>
+    <p class="text-center mb-2"><%= "Status : #{voucher_status}" %></p>
+  </div>
+  <%= link_to 'Utiliser', voucher_redeems_path(@voucher), method: :post, class: "btn btn-flat" %>
+<% else %>
+  <div class="container-voucher-info">
+    <p class="text-center mb-2"><%= "Utilisations restantes : #{@voucher.limit_use - @voucher.nb_redeems}" %></p>
+    <p class="text-center mb-2"><%= "Offre : #{@voucher.offer.name}" %></p>
+    <p class="text-center mb-2"><%= "Prix Total : #{@voucher.final_price}€" %></p>
+    <p class="text-center mb-2"><%= "Période de validité : #{@voucher.offer.validity}mois" %></p>
+    <p class="text-center mb-2"><%= "A partir du : #{@voucher.created_at}" %></p>
+    <p class="text-center mb-2"><%= "Fin validité : #{@voucher.created_at + @voucher.offer.validity.months}" %></p>
+    <p class="text-center mb-2"><%= "Status : #{voucher_status}" %></p>
+  </div>
+<% end %>
+
+<%# <div class= "qrcode">
+  <%= @voucher.qr_code.html_safe %>
+<%# </div> %>
+<% content_for :back_link do %>
+  <a href="<%= root_path %>">
+    <div class="btn-footer">
+      <%= image_tag 'return.png',class:"btn-footer__icon" %>
+    </div>
+  </a>
+<% end %>

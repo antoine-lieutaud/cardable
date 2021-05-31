@@ -3,6 +3,7 @@ class DashboardsController < ApplicationController
   def show
     authorize current_user
   end
+
   private
 
   def set_zone

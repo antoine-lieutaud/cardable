@@ -8,3 +8,11 @@
       <%= i.submit "MODIFIER", class:"btn-validation  border 0", id:"offer-submit" %>
     <% end %>
 </div>
+
+<% content_for :back_link do %>
+  <a href="<%= restaurant_offer_path(@restaurant, @offer) %>">
+    <div class="btn-footer">
+      <%= image_tag 'return.png',class:"btn-footer__icon" %>
+    </div>
+  </a>
+<% end %>
