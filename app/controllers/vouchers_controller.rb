@@ -36,11 +36,10 @@ class VouchersController < ApplicationController
 
   def index
     if params[:query].present?
-      @vouchers = Voucher.where("customer_email ILIKE ?", "%#{params[:query]}%")
+      @vouchers = policy_scope(Voucher).where("customer_email ILIKE ?", "%#{params[:query]}%")
     else
-      @vouchers = Voucher.all
+      @vouchers = policy_scope(Voucher).all
     end
-    @vouchers = policy_scope(Voucher)
   end
 
   private
