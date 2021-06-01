@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_31_094201) do
+ActiveRecord::Schema.define(version: 2021_06_01_095027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2021_05_31_094201) do
     t.string "customer_email"
     t.integer "final_price"
     t.integer "nb_redeems", default: 0
+    t.date "expiration_date"
     t.index ["offer_id"], name: "index_vouchers_on_offer_id"
   end
 

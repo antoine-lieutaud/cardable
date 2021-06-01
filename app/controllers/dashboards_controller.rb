@@ -5,9 +5,13 @@ class DashboardsController < ApplicationController
   end
 
   def statistiques
-    @offers = Offer.all
-    @offer = Offer.find_by(name: params[:query]) if params[:query]
-    # @offer = Offer.find_by(name: params[:query], state: true) if params[:query]
+    @offers = Offer.where.not(name: "")
+    if params.dig(:search, :offer)
+      @offer = Offer.find(params.dig(:search, :offer))
+      @pending_stats = Voucher.pending_stats(@offer)
+      @consummate_stats = Voucher.consummate_stats(@offer)
+      @expired_stats = Voucher.expired_stats(@offer)
+    end
 
     authorize current_user
   end

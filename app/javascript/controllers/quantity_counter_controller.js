@@ -5,13 +5,11 @@ export default class extends Controller {
 
   minus() {
     const priceController = document.querySelector("[data-controller='price']");
-    console.log(priceController);
     let currentValue = this.inputTarget.value;
     if (currentValue == "") {
       this.inputTarget.value = 0;
       this.numberTarget.innerText = 0;
       priceController.controller.computeTotalPrice(0);
-
     } else {
       const newValue = parseInt(currentValue) - 1;
       if (newValue < 0) {
@@ -27,8 +25,9 @@ export default class extends Controller {
   }
   plus() {
     const priceController = document.querySelector("[data-controller='price']");
-    console.log(priceController);
+
     let currentValue = this.inputTarget.value;
+
     if (currentValue == "") {
       this.inputTarget.value = 1;
       this.numberTarget.innerText = 1;

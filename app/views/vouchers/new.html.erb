@@ -3,21 +3,21 @@
 
   <%= simple_form_for [ Voucher.new ], html: {class: "text-center", data: { controller: "price", price_offers_value: @offers.pluck(:id, :price).to_h, price_offer_price_value: ""} } do |i| %>
     <%#= i.input :qr_code %>
-    <%= i.input :offer, collection: @offers, label:"FORMULE:", input_html: {class: "input-rounded-grey"}  %>
+    <%= i.input :offer, collection: @offers, label:"FORMULE:", input_html: {class: "input-rounded-grey", data: { action: 'change->price#changePrice' }}  %>
     <div class="container quantite" data-controller="quantity-counter">
       <div class="text-center text-white">
-      <p class="font-24px">QUANTITE</p>
-        <div class="d-flex justify-content-between w-75 mx-auto mt-3">
-          <div class="d-flex align-items-center justify-content-center text-rouge btn-quantite" id="btMoins" data-action="click->quantity-counter#minus">-
+        <p class="font-24px">QUANTITE</p>
+          <div class="d-flex justify-content-between w-75 mx-auto mt-3">
+            <div class="d-flex align-items-center justify-content-center text-rouge btn-quantite" id="btMoins" data-action="click->quantity-counter#minus">-
+            </div>
+            <div class="d-flex align-items-center justify-content-center font-24px" id="number" data-quantity-counter-target="number">0
+            </div>
+            <div class="d-flex align-items-center justify-content-center text-rouge btn-quantite" id="btPlus"  data-action="click->quantity-counter#plus">+
+            </div>
           </div>
-          <div class="d-flex align-items-center justify-content-center font-24px" id="number" data-quantity-counter-target="number">0
-          </div>
-          <div class="d-flex align-items-center justify-content-center text-rouge btn-quantite" id="btPlus"  data-action="click->quantity-counter#plus">+
-          </div>
-        </div>
-    </div>
+      </div>
     
-      <%= i.input :limit_use, label:"QUANTITE", wrapper_html: {class: "d-none"}, input_html: {data: {quantity_counter_target: "input", price_target: "quantity"}} %>
+      <%= i.input :limit_use, label:"QUANTITE", wrapper_html: {class: "d-none"}, input_html: {data: { quantity_counter_target: "input", price_target: "quantity"}} %>
     </div>
     <p class="text-center font-20px">Prix:</p>
     <div class="mb-4 font-30px" id="priceCount" data-price-target="price">

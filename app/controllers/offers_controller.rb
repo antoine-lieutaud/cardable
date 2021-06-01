@@ -3,7 +3,7 @@ class OffersController < ApplicationController
 
   def index
     @restaurant = current_user.restaurants.find(params[:restaurant_id])
-    if params[:archived ] == "true"
+    if params[:archived] == "true"
       @offers = policy_scope(@restaurant.offers).where(state: false)
     else
       @offers = policy_scope(@restaurant.offers).where(state: true)
@@ -70,13 +70,13 @@ class OffersController < ApplicationController
     @offer.save
     redirect_to restaurant_offers_path(@offer.restaurant)
   end
-  
+
   private
 
   def offer_params
     params.require(:offer).permit(:price, :description, :restaurant, :state, :name, :validity)
 
-    #scan-qr
+    # scan-qr
   end
 
   def set_zone
