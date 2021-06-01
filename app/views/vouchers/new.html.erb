@@ -25,6 +25,7 @@
     </div>
     <p class="text-center font-20px">€</p>
     <%= i.input :customer_email, label:"E-mail client", placeholder: "client@e-mail.com", input_html: {class: "input-rounded-grey"} %>
-    <%= i.submit "VALIDER", class:"btn-validation  border 0", id:"offer-submit" %>
+    <div id="sweet-alert-demo2" class="btn-validation  border 0">VALIDER</div>
+    <%= i.submit "VALIDER", class:"d-none", id:"vouchercreated" %>
   <% end %>
 </div>

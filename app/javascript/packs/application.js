@@ -48,6 +48,15 @@ document.addEventListener('turbolinks:load', () => {
       document.querySelector("#vouchersummit").click();
     }
   });
+
+  initSweetalert('#sweet-alert-demo2', {
+    title: "Votre coupon a bien ete cree",
+    icon: "success",
+    buttons: "OK"
+  }, (value) => {
+    console.log(document.querySelector("#vouchercreated"))
+    document.querySelector("#vouchercreated").click();
+  });
 });
 
 import "controllers"
