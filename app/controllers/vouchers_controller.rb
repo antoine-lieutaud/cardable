@@ -27,7 +27,6 @@ class VouchersController < ApplicationController
     # # @voucher.qr_code = qr.to_s
     # @voucher.save!
     redirect_to voucher_path(@voucher)
-
   end
 
   def show
@@ -50,6 +49,6 @@ class VouchersController < ApplicationController
   end
 
   def set_zone
-    @zone = "scann"
+    @zone = "scanner"
   end
 end
