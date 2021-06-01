@@ -28,13 +28,16 @@ import "bootstrap";
 // Internal imports, e.g:
 import { initNavbar } from '../plugins/navbar';
 import { scanQR } from '../plugins/scan_qr';
+import { initSelect2 } from '../plugins/init_select2';
 import { initSweetalert } from '../plugins/init_sweetalert';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initNavbar();
   scanQR();
+  initSelect2();
 
   initSweetalert('#sweet-alert-demo', {
     title: "hello",
@@ -45,8 +48,6 @@ document.addEventListener('turbolinks:load', () => {
     console.log(document.querySelector("#vouchersummit"))
     document.querySelector("#vouchersummit").click();
   });
-
-
 });
 
 import "controllers"
