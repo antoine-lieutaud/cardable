@@ -1,6 +1,6 @@
 class RedeemsController < ApplicationController
 
-      
+
       def create
         @redeem = Redeem.new
         @voucher = Voucher.find(params[:voucher_id])
