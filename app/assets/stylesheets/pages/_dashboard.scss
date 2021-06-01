@@ -1,14 +1,13 @@
 .dispatch-dashboard-menu {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 24px;
   grid-row-gap: 24px;
-  
+
   .btn-menu-1 {
-    grid-area: 1 / 1 / 2 / 2; 
+    grid-area: 1 / 1 / 2 / 2;
   }
-  
+
   .btn-menu-2 {
     grid-area: 2 / 2 / 3 / 3;
   }
