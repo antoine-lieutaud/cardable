@@ -1,6 +1,16 @@
+.title-offer-creer {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  margin-top: -14px;
+  margin-bottom: -7px;
+}
+
 .list-offer-index {
   margin-top: 30px;
-  display: grid;
+  width: 100%;
+  display: inline-block;
   align-items: center;
   color: white;
   text-align: center;
@@ -15,11 +25,14 @@
   padding: 8px 24px;
   border-radius: 10px;
   transition: background 0.3s ease;
-  background-color: rgb(145, 106, 172);
-  width: 100%;
+  background-color: $violet_boutique;
   justify-content: center;
   color: white;
-  opacity: 0.7;
+  margin: 20px;
+
+    &.archived {
+    background-color: rgb(207, 207, 207);
+    }
 }
 
 .offer-card a {
@@ -53,14 +66,12 @@
 .description-price {
   display: flex;
   color: white;
-  padding: 16px 31px;
-  border-radius: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
   transition: background 0.3s ease;
   background-color: $violet_boutique;
-  width: 100%;
   justify-content: center;
   color: white;
-  opacity: 0.7;
   align-items: center;
   font-size: 30px;
 }
