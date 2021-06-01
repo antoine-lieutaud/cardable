@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   end
 
   get "dashboard", to: "dashboards#show", as: :dashboard
-
+  get "statistiques", to: "dashboards#statistiques"
+  
   resources :restaurants do
     resources :vouchers, only: [:new]
   end

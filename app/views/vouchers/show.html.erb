@@ -1,12 +1,13 @@
 <% ending_date = @voucher.created_at + @voucher.offer.validity.months %>
 
-<% if ending_date < Date.today %>
-  <% voucher_status = 'périmé' %>
-<% elsif @voucher.limit_use - @voucher.nb_redeems.to_i == 0 %>
-  <% voucher_status = 'consommé' %>
-<% else %>
-  <% voucher_status = 'valide'%>
-<% end %>
+   <% if ending_date < Date.today %>
+      <% voucher_status = 'périmé' %>
+      <% voucher_color = '#102E4E' %>
+   <% elsif @voucher.limit_use - @voucher.nb_redeems == 0 %>
+      <% voucher_status = 'consommé' %>
+   <% else %>
+      <% voucher_status = 'VALID'%>
+   <% end %>
 
 <% if @voucher.limit_use - @voucher.nb_redeems.to_i > 0 %>
   <div class="container-voucher-info">
@@ -20,6 +21,7 @@
   </div>
    <div id="sweet-alert-demo" class="btn btn-danger">Utiliser</div>
   <%= link_to 'Utiliser', voucher_redeems_path(@voucher), method: :post, id: "vouchersummit", class: "d-none" %>
+  </div>
 <% else %>
   <div class="container-voucher-info">
     <p class="text-center mb-2"><%= "Utilisations restantes : #{@voucher.limit_use - @voucher.nb_redeems.to_i}" %></p>
@@ -32,9 +34,9 @@
   </div>
 <% end %>
 
-<%# <div class= "qrcode">
-  <%= @voucher.qr_code.html_safe %>
-<%# </div> %>
+<%# <div class= "qrcode"> %>
+  <%#= @voucher.qr_code.html_safe %>
+ <%# </div> %>
 <% content_for :back_link do %>
   <a href="<%= root_path %>">
     <div class="btn-footer">

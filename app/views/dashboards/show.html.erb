@@ -10,12 +10,13 @@
       </div>
     <% end %>
 
-
-    <div class="btn-menu btn-yellow btn-menu-2">
-      <%= image_tag 'bar-chart.png',class:"btn-menu__icon" %>
-      <div class="btn-menu__name">
-        statistiques
+    <%= link_to statistiques_path(@restaurant) do %>
+      <div class="btn-menu btn-yellow btn-menu-2">
+        <%= image_tag 'bar-chart.png',class:"btn-menu__icon" %>
+        <div class="btn-menu__name">
+          statistiques
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
