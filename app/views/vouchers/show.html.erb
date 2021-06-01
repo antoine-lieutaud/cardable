@@ -13,16 +13,16 @@
   <div class="container-voucher-info">
     <div class="redeem-circle mt-3"><%= "#{@voucher.limit_use - @voucher.nb_redeems}" %></div>
     <p class="text-center mb-4", style="font-size:24px"> Utilisations restantes</p>
-    <%= link_to 'Utiliser', voucher_redeems_path(@voucher), method: :post, class: "btn-redeem mb-5" %>
+
+    <div id="sweet-alert-demo" class="btn-redeem mb-5">Utiliser</div>
+  <%= link_to 'Utiliser', voucher_redeems_path(@voucher), method: :post, id: "vouchersummit", class: "d-none" %>
     <div class="container-voucher-details">
       <p class="text-center mb-2"><%= "Statut : "%><span style="color: <%= voucher_color %>"><%="#{voucher_status}"%></span></p>
       <p class="text-center mb-2"><%= "Fin validité : #{(@voucher.created_at + @voucher.offer.validity.months).to_s.split.first}" %></p>
       <p class="text-center mb-2"><%= "Offre : #{@voucher.offer.name}" %></p>
       <p class="text-center mb-2"><%= "Utilisations restantes : #{@voucher.limit_use - @voucher.nb_redeems} / #{@voucher.limit_use}" %></p>
     </div>
-    <div id="sweet-alert-demo" class="btn btn-danger">Utiliser</div>
-     <%= link_to 'Utiliser', voucher_redeems_path(@voucher), method: :post, id: "vouchersummit", class: "d-none" %>
-    </div>
+  </div>
 <% else %>
   <div class="container-voucher-info">
     <p class="text-center mb-2"><%= "Utilisations restantes : #{@voucher.limit_use - @voucher.nb_redeems.to_i}" %></p>

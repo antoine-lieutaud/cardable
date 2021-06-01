@@ -40,13 +40,13 @@ document.addEventListener('turbolinks:load', () => {
   initSelect2();
 
   initSweetalert('#sweet-alert-demo', {
-    title: "hello",
-    text: "Formule: XXXX\nnombre de personnes: X\ndate de creation: XX/XX/XXXX\ndate d'expiration: XX/XX/XXXX\nPre\n il reste 2 utilisations",
-    icon: "success",
-    buttons: ["Annuler", "Utiliser le coupon"]
+    title: "Etes-vous sur de vouloir utiliser ce coupon ?",
+    icon: "warning",
+    buttons: ["Annuler", "Utiliser"]
   }, (value) => {
-    console.log(document.querySelector("#vouchersummit"))
-    document.querySelector("#vouchersummit").click();
+    if (value){
+      document.querySelector("#vouchersummit").click();
+    }
   });
 });
 
