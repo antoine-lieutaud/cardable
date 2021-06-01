@@ -37,22 +37,16 @@ document.addEventListener('turbolinks:load', () => {
   scanQR();
 
   initSweetalert('#sweet-alert-demo', {
-    title: "Valide",
-    text: "Un menu, 2 personnes, genere le XX/XX/XXXX au nom de X \n il reste 2 utilisations",
+    title: "hello",
+    text: "Formule: XXXX\nnombre de personnes: X\ndate de creation: XX/XX/XXXX\ndate d'expiration: XX/XX/XXXX\nPre\n il reste 2 utilisations",
     icon: "success",
     buttons: ["Annuler", "Utiliser le coupon"]
   }, (value) => {
-    console.log(value);
+    console.log(document.querySelector("#vouchersummit"))
+    document.querySelector("#vouchersummit").click();
   });
 
-  initSweetalert('#sweet-alert-demo2', {
-    title: "Non Valide",
-    text: "A faire: if validate = true, return 'Ce coupon a deja ete utilise le XX/XX/XXXX' else 'ce coupon n'a jamais ete genere",
-    icon: "error",
-    buttons: "Retour"
-  }, (value) => {
-    console.log(value);
-  });
+
 });
 
 import "controllers"

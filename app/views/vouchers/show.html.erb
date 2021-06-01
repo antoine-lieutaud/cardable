@@ -1,30 +1,31 @@
-   <% ending_date = @voucher.created_at + @voucher.offer.validity.months %>
+<% ending_date = @voucher.created_at + @voucher.offer.validity.months %>
 
-   <% if ending_date < Date.today %>
-      <% voucher_status = 'périmé' %>
-   <% elsif @voucher.limit_use - @voucher.nb_redeems == 0 %>
-      <% voucher_status = 'consommé' %>
-   <% else %>
-      <% voucher_status = 'valide'%>
-   <% end %>
+<% if ending_date < Date.today %>
+  <% voucher_status = 'périmé' %>
+<% elsif @voucher.limit_use - @voucher.nb_redeems.to_i == 0 %>
+  <% voucher_status = 'consommé' %>
+<% else %>
+  <% voucher_status = 'valide'%>
+<% end %>
 
-<% if @voucher.limit_use - @voucher.nb_redeems > 0 %>
+<% if @voucher.limit_use - @voucher.nb_redeems.to_i > 0 %>
   <div class="container-voucher-info">
-    <p class="text-center mb-2"><%= "Utilisations restantes : #{@voucher.limit_use - @voucher.nb_redeems}" %></p>
+    <p class="text-center mb-2"><%= "Utilisations restantes : #{@voucher.limit_use - @voucher.nb_redeems.to_i}" %></p>
     <p class="text-center mb-2"><%= "Offre : #{@voucher.offer.name}" %></p>
     <p class="text-center mb-2"><%= "Prix Total : #{@voucher.final_price}€" %></p>
-    <p class="text-center mb-2"><%= "Période de validité : #{@voucher.offer.validity}mois" %></p>
+    <p class="text-center mb-2"><%= "Période de validité : #{@voucher.offer.validity} mois" %></p>
     <p class="text-center mb-2"><%= "A partir du : #{@voucher.created_at}" %></p>
     <p class="text-center mb-2"><%= "Fin validité : #{@voucher.created_at + @voucher.offer.validity.months}" %></p>
     <p class="text-center mb-2"><%= "Status : #{voucher_status}" %></p>
   </div>
-  <%= link_to 'Utiliser', voucher_redeems_path(@voucher), method: :post, class: "btn btn-flat" %>
+   <div id="sweet-alert-demo" class="btn btn-danger">Utiliser</div>
+  <%= link_to 'Utiliser', voucher_redeems_path(@voucher), method: :post, id: "vouchersummit", class: "d-none" %>
 <% else %>
   <div class="container-voucher-info">
-    <p class="text-center mb-2"><%= "Utilisations restantes : #{@voucher.limit_use - @voucher.nb_redeems}" %></p>
+    <p class="text-center mb-2"><%= "Utilisations restantes : #{@voucher.limit_use - @voucher.nb_redeems.to_i}" %></p>
     <p class="text-center mb-2"><%= "Offre : #{@voucher.offer.name}" %></p>
     <p class="text-center mb-2"><%= "Prix Total : #{@voucher.final_price}€" %></p>
-    <p class="text-center mb-2"><%= "Période de validité : #{@voucher.offer.validity}mois" %></p>
+    <p class="text-center mb-2"><%= "Période de validité : #{@voucher.offer.validity} mois" %></p>
     <p class="text-center mb-2"><%= "A partir du : #{@voucher.created_at}" %></p>
     <p class="text-center mb-2"><%= "Fin validité : #{@voucher.created_at + @voucher.offer.validity.months}" %></p>
     <p class="text-center mb-2"><%= "Status : #{voucher_status}" %></p>

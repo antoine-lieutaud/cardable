@@ -21,9 +21,6 @@ const successCallback = (result) => {
   }
   document.getElementById("console").innerText = result;
   window.location.replace(result);
-  const btnValide = document.getElementsById("sweet-alert-demo").click();
-  console.log(btnValide)
-
 }
 
 const failureCallback = (result) => {
@@ -34,9 +31,6 @@ const failureCallback = (result) => {
     message.innerText = result;
   }
   document.getElementById("console").innerText = result;
-  const btnInvalide = document.getElementsById("sweet-alert-demo2").click();
-  console.log(btnInvalide)
-
 }
 
 export { scanQR };
