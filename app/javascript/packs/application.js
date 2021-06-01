@@ -28,12 +28,27 @@ import "bootstrap";
 // Internal imports, e.g:
 import { initNavbar } from '../plugins/navbar';
 import { scanQR } from '../plugins/scan_qr';
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initNavbar();
   scanQR();
+
+  initSweetalert('#sweet-alert-demo', {
+    title: "hello",
+    text: "Formule: XXXX\nnombre de personnes: X\ndate de creation: XX/XX/XXXX\ndate d'expiration: XX/XX/XXXX\nPre\n il reste 2 utilisations",
+    icon: "success",
+    buttons: ["Annuler", "Utiliser le coupon"]
+  }, (value) => {
+    console.log(document.querySelector("#vouchersummit"))
+    document.querySelector("#vouchersummit").click();
+  });
+
+
 });
 
 import "controllers"
+
+

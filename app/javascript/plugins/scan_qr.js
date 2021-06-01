@@ -14,19 +14,23 @@ const scanQR = () => {
 
 const successCallback = (result) => {
   console.log("result", result)
+
   const message = document.getElementById("console")
   if (message) {
     message.innerText = result;
   }
+  document.getElementById("console").innerText = result;
   window.location.replace(result);
 }
 
 const failureCallback = (result) => {
   console.log("fail", result)
+
   const message = document.getElementById("console")
   if (message) {
     message.innerText = result;
   }
+  document.getElementById("console").innerText = result;
 }
 
 export { scanQR };
