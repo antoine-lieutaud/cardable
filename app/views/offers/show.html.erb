@@ -11,15 +11,16 @@
 
   <div class="btn-offer-orga">
     <%= link_to "Modifier", edit_restaurant_offer_path(@restaurant), class: "btn-offre-show" %>
-    <%= link_to "Supprimer", restaurant_offer_path(@restaurant), method: :delete, data: { confirm: 'Etes-vous sûr de vouloir supprimer la formule "' "#{@offer.name}" '" ?' }, class: "btn-offre-show" %>
     <%if @offer.state == true %>
       <%= link_to "Archiver", archive_restaurant_offer_path(@restaurant, @offer), method: :patch, data: { confirm: 'Etes-vous sûr de vouloir archiver la formule "' "#{@offer.name}" '" ?' }, class: "btn-offre-show" %>
     <% else %>
       <%= link_to "Activer", active_restaurant_offer_path(@restaurant, @offer), method: :patch, data: { confirm: 'Etes-vous sûr de vouloir activer la formule "' "#{@offer.name}" '" ?' }, class: "btn-offre-show" %>
     <% end %>
    </div>
-</a>
 
+  <div class="btn-delete-orga">
+    <%= link_to "Supprimer", restaurant_offer_path(@restaurant), method: :delete, data: { confirm: 'Etes-vous sûr de vouloir supprimer la formule "' "#{@offer.name}" '" ?' }, class: "btn-offre-delete" %>
+  </div>
 
 <% content_for :back_link do %>
   <a href="<%= restaurant_offers_path(@restaurant) %>">
