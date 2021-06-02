@@ -1,11 +1,15 @@
 .footer-orga {
   display: flex;
   position: fixed;
-  bottom: 10px;
+  bottom: 0px;
   left: 0;
-  width: 100%;
+  width: 90%;
   justify-content: space-between;
   align-items: flex-end;
+  margin-left: 19px;
+  z-index: 10;
+  background-color: #F4F4F4;
+  padding-top: 10px;
 
   &.coupon {
     .btn-footer {
@@ -262,13 +266,11 @@ MENU STYLES
 .m-hamburger__label{
   transition-property: transform, opacity;
 }
-
 /*
 =====
 MENU STATES
 =====
 */
-
 .menu__toggle:focus{
   outline: var(--menuHaburgerOutlineOWidth, 2px) solid var(--menuHaburgerOutlineColor);
   outline-offset: var(--menuHaburgerOutlineOffset, 5px);
@@ -319,8 +321,6 @@ MENU STATES
 SETTINGS
 =====
 */
-
-
 
 .menu_activated{
   --menuHaburgerOutlineColor: var(--colorWhite);

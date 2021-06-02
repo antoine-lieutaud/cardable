@@ -1,9 +1,10 @@
 class VouchersController < ApplicationController
-  before_action :set_zone
+
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     @offers = @restaurant.offers
     @voucher = Voucher.new
+    @zone = "offre"
     authorize @voucher
   end
 
@@ -30,11 +31,13 @@ class VouchersController < ApplicationController
   end
 
   def show
+    @zone = "dashboard"
     @voucher = Voucher.find(params[:id])
     authorize @voucher
   end
 
   def index
+    @zone = "dashboard"
     if params[:query].present?
       @vouchers = policy_scope(Voucher).where("customer_email ILIKE ?", "%#{params[:query]}%")
     else
@@ -46,9 +49,5 @@ class VouchersController < ApplicationController
 
   def voucher_params
     params.require(:voucher).permit(:limit_use, :customer_email)
-  end
-
-  def set_zone
-    @zone = "scanner"
   end
 end

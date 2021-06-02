@@ -21,9 +21,11 @@
 
     </div>
     <p class="text-center font-20px">Prix:</p>
-    <div class="mb-4 font-30px" id="priceCount" data-price-target="price">
+    <div class="d-flex align-items-center justify-content-center">
+      <div class="mb-4 font-30px" id="priceCount" data-price-target="price">
+      </div>
+      <p class="text-center font-20px ml-2">€</p>
     </div>
-    <p class="text-center font-20px">€</p>
     <%= i.input :customer_email, label:"E-mail client", placeholder: "client@e-mail.com", input_html: {class: "input-rounded-grey"} %>
     <%= i.submit "VALIDER", class:"btn-validation  border 0", id:"offer-submit" %>
   <% end %>
