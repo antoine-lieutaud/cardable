@@ -40,7 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   initSelect2();
 
   initSweetalert('#sweet-alert-demo', {
-    title: "Etes-vous sur de vouloir utiliser ce coupon ?",
+    title: "Êtes-vous sûr de vouloir utiliser ce coupon ?",
     icon: "warning",
     buttons: ["Annuler", "Utiliser"]
   }, (value) => {
@@ -50,7 +50,7 @@ document.addEventListener('turbolinks:load', () => {
   });
 
   initSweetalert('#sweet-alert-demo2', {
-    title: "Votre coupon a bien ete cree",
+    title: "Votre coupon a bien été créé",
     icon: "success",
     buttons: "OK"
   }, (value) => {
