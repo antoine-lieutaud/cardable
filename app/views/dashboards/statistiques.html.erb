@@ -7,31 +7,31 @@
         label:"Formule:",
         selected: params.dig(:search, :offer),
         input_html: {
-          class: "select2", 
-          data: { action: "change->price#changePrice"},
+          class: "select2" 
+          # data: { action: "change->price#changePrice"},
         }  %>
-      <%= f.submit "go", class: "btn btn-sn btn-outline-primary"  %>
+      <%= f.submit "go", class: "btn btn-sn btn-go"  %>
     <% end %>
 </div>
 <% if @offer %>
-  <h3 class="text-jaune text-center mb-3">Coupons en attente</h3>
+  <h3 class="text-center mt-3 mb-3">Coupons en attente</h3>
     <div class="d-flex align-items-center justify-content-between">
       <% @pending_stats.each do |k, v| %>
-        <div><%= v %></div>
+        <div class="pending-element"><%= v %></div>
       <% end %>
     </div>
 
-  <h3 class="text-jaune text-center mb-3">Coupons consommés</h3>
+  <h3 class="text-center mt-3 mb-3">Coupons consommés</h3>
     <div class="d-flex align-items-center justify-content-between">
       <% @consummate_stats.each do |k, v| %>
-        <div><%= v %></div>
+        <div class="pending-element"><%= v %></div>
       <% end %>
     </div>
-  <h3 class="text-jaune text-center mb-3">Coupons perimés</h3>
+  <h3 class="text-center mt-3 mb-3">Coupons perimés</h3>
     <div class="d-flex align-items-center justify-content-between">
       <% @expired_stats.each do |k, v| %>
-        <div><%= v %></div>
+        <div class="pending-element"><%= v %></div>
       <% end %>
     </div>
-  <h3 class="text-jaune text-center mb-3">Total</h3>
+  <%# <h3 class="text-jaune text-center mb-3">Total</h3> %>
 <% end %>

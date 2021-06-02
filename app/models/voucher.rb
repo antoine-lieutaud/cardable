@@ -17,9 +17,9 @@ class Voucher < ApplicationRecord
     number_of_redeems = Redeem.where(voucher_id: vouchers.pluck(:id)).count
     amount = offer.price * (number_of_offers - number_of_redeems)
     {
-      number_of_vouchers: number_of_vouchers,
-      number_of_offers: number_of_offers - number_of_redeems,
-      amount: amount
+      coupons: number_of_vouchers,
+      formules: number_of_offers - number_of_redeems,
+      total: amount
     }
   end
 
@@ -29,9 +29,9 @@ class Voucher < ApplicationRecord
     number_of_redeems = Redeem.where(voucher_id: vouchers.pluck(:id)).count
     amount = offer.price * number_of_redeems
     {
-      number_of_vouchers: number_of_vouchers,
-      number_of_redeems: number_of_redeems,
-      amount: amount
+      coupons: number_of_vouchers,
+      formules: number_of_redeems,
+      total: amount
     }
   end
 
@@ -42,9 +42,9 @@ class Voucher < ApplicationRecord
     number_of_redeems = Redeem.where(voucher_id: vouchers.pluck(:id)).count
     amount = offer.price * (number_of_offers - number_of_redeems)
     {
-      number_of_vouchers: number_of_vouchers,
-      number_of_offers: number_of_offers - number_of_redeems,
-      amount: amount
+      coupons: number_of_vouchers,
+      formules: number_of_offers - number_of_redeems,
+      total: amount
     }
   end
 
