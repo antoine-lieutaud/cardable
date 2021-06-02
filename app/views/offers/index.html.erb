@@ -4,9 +4,9 @@
 </div>
     <%= form_tag restaurant_offers_path(@restaurant), method: :get, class: "btn-offer-orga" do %>
       <%if params[:archived ] == "true"%>
-        <%= link_to "offres activées", restaurant_offers_path(@restaurant, archived: false), class: "btn-offre"%>
+        <%= link_to "< offres activées", restaurant_offers_path(@restaurant, archived: false), class: "btn-text"%>
       <% else %>
-        <%= link_to "offres archivées", restaurant_offers_path(@restaurant, archived: true), class: "btn-offre" %>
+        <%= link_to "< offres archivées", restaurant_offers_path(@restaurant, archived: true), class: "btn-text" %>
       <% end %>
 
     <% end %>

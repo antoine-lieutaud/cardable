@@ -1,3 +1,12 @@
+// ########### BTN TEXT
+
+.btn-text {
+  color: $violet_boutique;
+  text-decoration: underline;
+}
+
+//########### BTN TEXT
+
 // ##### bouton orange
 .btn-dashboard {
   color: white;
@@ -29,6 +38,18 @@
   color: white;
   text-decoration: none;
 }
+
+.btn-redeem-red {
+  color: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+  background: $rouge_coupon;
+  transition: background 0.3s ease;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  font-size: 27px;
+}
+
+
 // ##### bouton rouge
 
 // ##### bouton jaune
@@ -46,13 +67,14 @@
   text-decoration: none;
 }
 
-.btn-redeem {
+.btn-redeem-yellow {
   color: white;
-  padding: 12px 30px;
+  padding: 10px 30px;
   border-radius: 10px;
   background: $jaune_scanner;
   transition: background 0.3s ease;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  font-size: 27px;
 }
 
 
@@ -95,8 +117,7 @@
 }
 
 .btn-offer-orga {
-  display: flex;
-  justify-content: space-evenly;
+  margin: 10px;
 }
 
 .btn-offre-show {
@@ -159,7 +180,7 @@
   height: 50px;
   width: 50px;
   display: flex;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   margin-left: 10px;
   margin-right: 10px;
 }
