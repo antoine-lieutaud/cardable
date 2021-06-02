@@ -13,12 +13,20 @@
   }
 }
 
-.pending-element {
+.statistiques-element {
   font-size: 20px;
-  border: 3px solid $jaune_scanner;
+  // border: 3px solid $jaune_scanner;
   border-radius: 10px;
-  margin:auto;
-  height: 60px;
-  width: 90px;
-  padding: 10px 30px;
+  padding: 7px 24px;
+  margin: 10px;
+  background-color: $jaune_scanner;
+  color:rgb(104, 104, 104);
+}
+
+.statistiques-title {
+  font-size: 17px;
+}
+
+.size-title {
+  font-size: 24px;
 }

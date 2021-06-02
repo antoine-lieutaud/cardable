@@ -11,6 +11,10 @@ class DashboardsController < ApplicationController
       @pending_stats = Voucher.pending_stats(@offer)
       @consummate_stats = Voucher.consummate_stats(@offer)
       @expired_stats = Voucher.expired_stats(@offer)
+    else
+      @pending_stats = Voucher.pending_stats
+      @consummate_stats = Voucher.consummate_stats
+      @expired_stats = Voucher.expired_stats
     end
 
     authorize current_user
