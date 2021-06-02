@@ -1,6 +1,5 @@
 <div class="container">
   <h1 class="text-jaune text-center mb-3">Statistiques</h1>
-    
     <%= simple_form_for :search, url: statistiques_path, method: :get, html: {class: "text-center", data: {controller: "offer-choice"}} do |f| %>
       <%= f.input :offer, 
         collection: @offers, 
@@ -13,7 +12,6 @@
       <%# <%= f.submit "go", class: "btn btn-sn btn-go"  %>
     <% end %>
 </div>
-
   <h3 class="text-center mt-3 mb-3 size-title">Coupons en attente</h3>
     <div class="d-flex align-items-center justify-content-between">
       <% @pending_stats.each do |k, v| %>
@@ -23,7 +21,6 @@
         </div>
       <% end %>
     </div>
-
   <h3 class="text-center mt-3 mb-3 size-title">Coupons consommés</h3>
     <div class="d-flex align-items-center justify-content-between">
       <% @consummate_stats.each do |k, v| %>

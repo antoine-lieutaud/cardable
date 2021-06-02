@@ -17,7 +17,7 @@
 <div class="list-voucher-index">
   <% @vouchers.each do |voucher| %>
     <div class= "voucher-card">
-      <%= link_to "#{voucher.customer_email}", voucher_path(voucher)%>
+      <%= link_to "#{voucher.customer_email} #{voucher.offer.name}", voucher_path(voucher)%>
     </div>
   <% end %>
 </div>
