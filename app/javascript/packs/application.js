@@ -30,6 +30,7 @@ import { initNavbar } from '../plugins/navbar';
 import { scanQR } from '../plugins/scan_qr';
 import { initSelect2 } from '../plugins/init_select2';
 import { initSweetalert } from '../plugins/init_sweetalert';
+import { redirectAfterIntro } from '../plugins/redirect_after_intro'
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -38,6 +39,7 @@ document.addEventListener('turbolinks:load', () => {
   initNavbar();
   scanQR();
   initSelect2();
+  redirectAfterIntro();
 
   initSweetalert('#sweet-alert-demo', {
     title: "Êtes-vous sûr de vouloir utiliser ce coupon ?",

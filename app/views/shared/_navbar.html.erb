@@ -1,51 +1,52 @@
- <div class="footer-orga <%= @zone %>">
-  <% unless action_name == 'home' %>
-    <%= link_to root_path do %>
-      <div class="btn-footer">
-        <%= image_tag 'home.png',class:"btn-footer__icon" %>
-      </div>
-    <% end %>
-  <% end %>
-  <div>
-    <div class="menu">
-      <%link_to root_path do %>
+<div>
+  <%# unless action_name == "intro" %>
+    <div class="footer-orga <%= @zone %>">
+      <%= link_to home_path do %>
         <div class="btn-footer">
           <%= image_tag 'home.png',class:"btn-footer__icon" %>
         </div>
       <% end %>
-      <nav class="menu__nav">
-        <ul class="menu__list r-list">
-        <% if user_signed_in? %>
-          <li class="menu__group">
-            <%= link_to "Acceuil", root_path, style: "color: white" %>
-          </li>
-          <li class="menu__group">
-            <%= link_to "À propos", "#", style: "color: white"%>
-          </li>
-          <li class="menu__group">
-          <%= link_to "Contacts", "#", style: "color: white"%>
-          </li>
-            <li class="menu__group">
-              <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, style: "color: white" %>
-            </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
+    <div>
+      <div class="menu">
+        <%link_to home_path do %>
+          <div class="btn-footer">
+            <%= image_tag 'home.png',class:"btn-footer__icon" %>
+          </div>
         <% end %>
-
-        </ul>
-      </nav>
-      <button class="menu__toggle r-button" type="button">
-        <span class="menu__hamburger m-hamburger">
-          <span class="m-hamburger__label">
-            <span class="menu__screen-reader screen-reader">Open menu</span>
+        <nav class="menu__nav">
+          <ul class="menu__list r-list">
+          <% if user_signed_in? %>
+            <li class="menu__group">
+              <%= link_to "Acceuil", home_path, style: "color: white" %>
+            </li>
+            <li class="menu__group">
+              <%= link_to "À propos", "#", style: "color: white"%>
+            </li>
+            <li class="menu__group">
+            <%= link_to "Contacts", "#", style: "color: white"%>
+            </li>
+              <li class="menu__group">
+                <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, style: "color: white" %>
+              </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
+          </ul>
+        </nav>
+        <button class="menu__toggle r-button" type="button">
+          <span class="menu__hamburger m-hamburger">
+            <span class="m-hamburger__label">
+              <span class="menu__screen-reader screen-reader">Open menu</span>
+            </span>
           </span>
-        </span>
-      </button>
+        </button>
+      </div>
     </div>
-  </div>
-  <%#= link_to root_path do %>
-    <%= content_for :back_link %>
+    <%#= link_to root_path do %>
+      <%= content_for :back_link %>
+    <%# end %>
+    </div>
   <%# end %>
 </div>

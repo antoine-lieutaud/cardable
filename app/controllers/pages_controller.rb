@@ -8,4 +8,8 @@ class PagesController < ApplicationController
 
   def components
   end
+
+  def intro
+
+  end
 end
