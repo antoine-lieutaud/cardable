@@ -1,36 +1,45 @@
 <div class="container">
   <h1 class="text-jaune text-center mb-3">Statistiques</h1>
-
-    <%= simple_form_for :search, url: statistiques_path, method: :get, html: {class: "text-center"} do |f| %>
-      <%= f.input :offer,
-        collection: @offers,
+    
+    <%= simple_form_for :search, url: statistiques_path, method: :get, html: {class: "text-center", data: {controller: "offer-choice"}} do |f| %>
+      <%= f.input :offer, 
+        collection: @offers, 
         label:"Formule:",
         selected: params.dig(:search, :offer),
-        input_html: {
-          class: "select2"
-          # data: { action: "change->price#changePrice"},
+        prompt: "Toutes les offres",
+        input_html: { 
+          data: { offer_choice_target: "select" },
         }  %>
-      <%= f.submit "go", class: "btn btn-sn btn-go"  %>
+      <%# <%= f.submit "go", class: "btn btn-sn btn-go"  %>
     <% end %>
 </div>
-<% if @offer %>
-  <h3 class="text-center mt-3 mb-3">Coupons en attente</h3>
+
+  <h3 class="text-center mt-3 mb-3 size-title">Coupons en attente</h3>
     <div class="d-flex align-items-center justify-content-between">
       <% @pending_stats.each do |k, v| %>
-        <div class="pending-element"><%= v %></div>
+        <div class="text-center">
+          <div class="statistiques-title"><%= k %></div>
+          <div class="statistiques-element"><%= v %></div>
+        </div>
       <% end %>
     </div>
 
-  <h3 class="text-center mt-3 mb-3">Coupons consommés</h3>
+  <h3 class="text-center mt-3 mb-3 size-title">Coupons consommés</h3>
     <div class="d-flex align-items-center justify-content-between">
       <% @consummate_stats.each do |k, v| %>
-        <div class="pending-element"><%= v %></div>
+        <div class="text-center">
+          <div class="statistiques-title"><%= k %></div>
+          <div class="statistiques-element"><%= v %></div>
+        </div>
       <% end %>
     </div>
-  <h3 class="text-center mt-3 mb-3">Coupons perimés</h3>
+  <h3 class="text-center mt-3 mb-3 size-title">Coupons perimés</h3>
     <div class="d-flex align-items-center justify-content-between">
       <% @expired_stats.each do |k, v| %>
-        <div class="pending-element"><%= v %></div>
+        <div class="text-center">
+          <div class="statistiques-title"><%= k %></div>
+          <div class="statistiques-element"><%= v %></div>
+        </div>
       <% end %>
     </div>
   <%# <h3 class="text-jaune text-center mb-3">Total</h3> %>
@@ -43,3 +52,4 @@
     </div>
   </a>
 <% end %>
+
