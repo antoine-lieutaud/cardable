@@ -10,7 +10,7 @@ class RedeemsController < ApplicationController
     authorize @redeem
   end
 
-  # def set_zone
-  #   @zone = "scanner"
-  # end
+  def set_zone
+    @zone = "scanner"
+  end
 end
