@@ -1,8 +1,10 @@
  <div class="footer-orga <%= @zone %>">
-  <%= link_to root_path do %>
-    <div class="btn-footer">
-      <%= image_tag 'home.png',class:"btn-footer__icon" %>
-    </div>
+  <% unless action_name == 'home' %>
+    <%= link_to root_path do %>
+      <div class="btn-footer">
+        <%= image_tag 'home.png',class:"btn-footer__icon" %>
+      </div>
+    <% end %>
   <% end %>
   <div>
     <div class="menu">

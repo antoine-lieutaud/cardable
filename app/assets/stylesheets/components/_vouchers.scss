@@ -21,20 +21,30 @@
 .container-voucher-details {
   border-radius: 5%;
   color: black;
-  /* border-color: #F8C347; */
   border: 3px solid #F8C347;
   justify-content: center;
   align-content: center;
   margin: 25px;
   padding: 15px;
   flex-wrap: wrap;
-  font-size: 10x;
+  display: grid;
+}
+
+.container-voucher-no-details {
+  border-radius: 5%;
+  color: black;
+  border: 3px solid $rouge_coupon;
+  justify-content: center;
+  align-content: center;
+  margin: 25px;
+  padding: 15px;
+  flex-wrap: wrap;
   display: grid;
 }
 
 .redeem-circle {
   height: 200px;
-  background-color: transparent !important; 
+  background-color: transparent !important;
   border-radius: 112%;
   color: #F8C347;
   /* border-color: #F8C347; */
@@ -47,8 +57,23 @@
   font-size: 98px;
   padding-bottom: 15px;
   box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
 }
 
-.style-valid {
-  color: green;
+.no-redeem-circle {
+  height: 200px;
+  background-color: transparent !important;
+  border-radius: 112%;
+  color: $rouge_coupon;
+  /* border-color: #F8C347; */
+  border: 5px solid $rouge_coupon;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  font-size: 98px;
+  padding-bottom: 15px;
+  box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
 }
