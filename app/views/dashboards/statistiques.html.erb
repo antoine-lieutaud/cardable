@@ -1,13 +1,13 @@
 <div class="container">
   <h1 class="text-jaune text-center mb-3">Statistiques</h1>
-    
+
     <%= simple_form_for :search, url: statistiques_path, method: :get, html: {class: "text-center"} do |f| %>
-      <%= f.input :offer, 
-        collection: @offers, 
+      <%= f.input :offer,
+        collection: @offers,
         label:"Formule:",
         selected: params.dig(:search, :offer),
         input_html: {
-          class: "select2" 
+          class: "select2"
           # data: { action: "change->price#changePrice"},
         }  %>
       <%= f.submit "go", class: "btn btn-sn btn-go"  %>
@@ -34,4 +34,12 @@
       <% end %>
     </div>
   <%# <h3 class="text-jaune text-center mb-3">Total</h3> %>
+<% end %>
+
+<% content_for :back_link do %>
+  <a href="<%= restaurant_dashboard_path %>">
+    <div class="btn-footer">
+      <%= image_tag 'return.png',class:"btn-footer__icon" %>
+    </div>
+  </a>
 <% end %>
