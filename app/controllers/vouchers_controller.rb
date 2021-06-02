@@ -27,6 +27,7 @@ class VouchersController < ApplicationController
     # # qr = RQRCode::QRCode.new(restaurant_voucher_path(@restaurant, @voucher))
     # # @voucher.qr_code = qr.to_s
     # @voucher.save!
+    VoucherMailer.send_voucher(@voucher).deliver_now
     redirect_to voucher_path(@voucher)
   end
 

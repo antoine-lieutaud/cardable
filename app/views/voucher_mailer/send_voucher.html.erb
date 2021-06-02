@@ -1,0 +1,19 @@
+<%="Hello, #{@voucher.customer_email}" %>
+
+<br/>
+Vous avez reçu un coupon cadeau vous permettant de profiter de l'offre suivante : <%=@voucher.offer.description%>
+<br/>
+
+<br/>
+Au restaurant : <%=@voucher.offer.restaurant.name%>
+<br/>
+
+
+<br/>
+Votre coupon est valable jusquau <%=@voucher.expiration_date%>
+<br/>
+<%= @voucher.qr_code.html_safe %>
+<br/>
+
+From,
+Cardable
