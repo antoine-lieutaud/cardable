@@ -13,3 +13,29 @@
 .select2-selection__rendered {
   line-height: 35px !important;
 }
+
+.statistiques-element {
+  font-size: 20px;
+  // border: 3px solid $jaune_scanner;
+  border-radius: 10px;
+  padding: 7px 24px;
+  margin: 10px;
+  background-color: $jaune_scanner;
+  color:rgb(104, 104, 104);
+}
+
+.statistiques-title {
+  font-size: 17px;
+}
+
+.size-title {
+  font-size: 30px;
+}
+
+.size-title-perime {
+  font-size: 20px;
+}
+
+.size-title-consummate {
+  font-size: 24px;
+}

@@ -8,13 +8,13 @@ class DashboardsController < ApplicationController
     @offers = Offer.where.not(name: "")
     if params.dig(:search, :offer)
       @offer = Offer.find(params.dig(:search, :offer))
-      @pending_stats = Voucher.pending_stats(@offer)
-      @consummate_stats = Voucher.consummate_stats(@offer)
-      @expired_stats = Voucher.expired_stats(@offer)
+      @pending_stats = @offer.pending_stats
+      @consummate_stats = @offer.consummate_stats
+      @expired_stats = @offer.expired_stats
     else
-      @pending_stats = Voucher.pending_stats
-      @consummate_stats = Voucher.consummate_stats
-      @expired_stats = Voucher.expired_stats
+      @pending_stats = current_user.restaurants.first.pending_stats
+      @consummate_stats = current_user.restaurants.first.consummate_stats
+      @expired_stats = current_user.restaurants.first.expired_stats
     end
 
     authorize current_user

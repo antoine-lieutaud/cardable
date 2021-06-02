@@ -8,16 +8,12 @@ class Voucher < ApplicationRecord
   scope :unexpired, -> { where("expiration_date >= ?", Date.today) }
   scope :expired, -> { where("expiration_date < ?", Date.today) }
 
-  def self.pending_stats(offer = nil)
-    if offer
-      vouchers = unexpired.joins(:offer).where("offers.id = ?", offer.id)
-    else
-      vouchers = unexpired
-    end
+  def self.pending_stats(offer)
+    vouchers = unexpired.joins(:offer).where("offers.id = ?", offer.id)
     number_of_vouchers = vouchers.count
     number_of_offers = vouchers.sum(:limit_use)
     number_of_redeems = Redeem.where(voucher_id: vouchers.pluck(:id)).count
-    amount = offer ? offer.price * (number_of_offers - number_of_redeems) : nil
+    amount = offer.price * (number_of_offers - number_of_redeems)
     {
       coupons: number_of_vouchers,
       formules: number_of_offers - number_of_redeems,
@@ -25,15 +21,11 @@ class Voucher < ApplicationRecord
     }
   end
 
-  def self.consummate_stats(offer = nil)
-    if offer
-      vouchers = unexpired.joins(:offer, :redeems).where("offers.id = ?", offer.id)
-    else
-      vouchers = unexpired
-    end
+  def self.consummate_stats(offer)
+    vouchers = unexpired.joins(:offer, :redeems).where("offers.id = ?", offer.id)
     number_of_vouchers = vouchers.count
     number_of_redeems = Redeem.where(voucher_id: vouchers.pluck(:id)).count
-    amount = offer ? offer.price * number_of_redeems : nil
+    amount = offer.price * number_of_redeems
     {
       coupons: number_of_vouchers,
       formules: number_of_redeems,
@@ -41,16 +33,12 @@ class Voucher < ApplicationRecord
     }
   end
 
-  def self.expired_stats(offer = nil)
-    if offer
-      vouchers = expired.joins(:offer).where("offers.id = ?", offer.id)
-    else
-      vouchers = expired
-    end
+  def self.expired_stats(offer)
+    vouchers = expired.joins(:offer).where("offers.id = ?", offer.id)
     number_of_vouchers = vouchers.count
     number_of_offers = vouchers.sum(:limit_use)
     number_of_redeems = Redeem.where(voucher_id: vouchers.pluck(:id)).count
-    amount = offer ? offer.price * (number_of_offers - number_of_redeems) : nil
+    amount = offer.price * (number_of_offers - number_of_redeems)
     {
       coupons: number_of_vouchers,
       formules: number_of_offers - number_of_redeems,
