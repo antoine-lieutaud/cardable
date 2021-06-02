@@ -57,6 +57,15 @@ document.addEventListener('turbolinks:load', () => {
     console.log(document.querySelector("#vouchercreated"))
     document.querySelector("#vouchercreated").click();
   });
+
+  initSweetalert('#sweet-alert-demo3', {
+    title: "L'offre a bien ete creee",
+    icon: "success",
+    buttons: "Retour a mes offres"
+  }, (value) => {
+    console.log(document.querySelector("#offercreated"))
+    document.querySelector("#offercreated").click();
+  });
 });
 
 import "controllers"
