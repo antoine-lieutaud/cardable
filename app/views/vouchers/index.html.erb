@@ -6,14 +6,14 @@
       <div class="search-container">
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control search-input rounded-pill",
+          class: "form-control search-input",
           placeholder: "Trouver un coupon"
         %>
         <i class="fa fa-search search-icon" aria-hidden="true"></i>
       </div>
     <% end %>
-</div>   
-  
+</div>
+
 <div class="list-voucher-index">
   <% @vouchers.each do |voucher| %>
     <div class= "voucher-card">

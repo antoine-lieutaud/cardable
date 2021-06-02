@@ -19,7 +19,6 @@
   width: 100%;
   justify-content: center;
   color: white;
-  opacity: 0.7;
 }
 
 .voucher-card a {
@@ -31,9 +30,10 @@
 }
 
 .search-container .search-input {
-  height: 50px;
-  background-color: $orange_dashboard;
+  height: 40px;
+  background-color: $jaune_scanner;
   color: white;
+  border-radius: 10px;
   &::placeholder {
     color: white;
   }
@@ -41,9 +41,7 @@
 
 .search-container .search-icon {
   position: absolute;
-  top: 16px;
-  bottom: 16px;
+  bottom: 11px;
   right: 20px;
-  height: 34px;
   color: white;
 }

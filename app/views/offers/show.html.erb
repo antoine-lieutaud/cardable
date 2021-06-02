@@ -1,5 +1,10 @@
 
-<h2 class="text-violet text-center mb-3 mt-2"><i></i><%= "#{@offer.name}" %></h2>
+<div class="grid-title-offer">
+  <%= "#{@offer.name}" %>
+  <%= link_to edit_restaurant_offer_path(@restaurant) do %>
+    <i class="far fa-edit"></i>
+  <% end %>
+</div>
   <div class="container center-offer">
     <h4 class="text-center mb-2 mt-3">Description</h4>
     <p class="description mb-4"><i></i><%= "#{@offer.description}" %></p>
@@ -9,11 +14,7 @@
     <p class="validity text-center"><i></i><%= "#{@offer.validity} mois" %></p>
   </div>
 
-    <%= link_to edit_restaurant_offer_path(@restaurant) do %>
-      <i class="far fa-edit"></i>
-    <% end %>
-
-  <div class="container d-flex align-items-start flex-column">
+  <div class="d-flex flex-column align-items-center justify-content-center">
     <%if @offer.state == true %>
       <%= link_to "Archiver", archive_restaurant_offer_path(@restaurant, @offer), method: :patch, data: { confirm: 'Etes-vous sûr de vouloir archiver la formule "' "#{@offer.name}" '" ?' }, class: "btn-offre-show" %>
     <% else %>
