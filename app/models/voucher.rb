@@ -1,8 +1,6 @@
 class Voucher < ApplicationRecord
   belongs_to :offer
-
   has_many :redeems, dependent: :destroy
-
   before_create :set_expiration_date
   after_create :generate_qrcode
   after_create :update_price
