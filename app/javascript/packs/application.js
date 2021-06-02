@@ -61,7 +61,7 @@ document.addEventListener('turbolinks:load', () => {
   });
 
   initSweetalert('#sweet-alert-demo3', {
-    title: "L'offre a bien ete creee",
+    title: "L'offre a bien été créée",
     icon: "success",
     buttons: "Retour a mes offres"
   }, (value) => {
