@@ -1,11 +1,13 @@
 <div>
-  <%# unless action_name == "intro" %>
+ <% unless (controller_name == "vouchers" && action_name == 'show') %>
     <div class="footer-orga <%= @zone %>">
+    <% unless action_name == "home" %>
       <%= link_to home_path do %>
         <div class="btn-footer">
           <%= image_tag 'home.png',class:"btn-footer__icon" %>
         </div>
       <% end %>
+    <% end %>
     <div>
       <div class="menu">
         <%link_to home_path do %>
@@ -48,5 +50,5 @@
       <%= content_for :back_link %>
     <%# end %>
     </div>
-  <%# end %>
+ <% end %>
 </div>

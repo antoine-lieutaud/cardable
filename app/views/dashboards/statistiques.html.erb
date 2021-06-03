@@ -1,12 +1,13 @@
 <div class="container">
   <h1 class="text-jaune text-center mb-3">Statistiques</h1>
     <%= simple_form_for :search, url: statistiques_path, method: :get, html: {class: "text-center", data: {controller: "offer-choice"}} do |f| %>
-      <%= f.input :offer, 
-        collection: @offers, 
+      <%= f.input :offer,
+        collection: @offers,
         label:"Formule:",
+        required: false,
         selected: params.dig(:search, :offer),
         prompt: "Toutes les offres",
-        input_html: { 
+        input_html: {
           data: { offer_choice_target: "select" },
         }  %>
     <% end %>
