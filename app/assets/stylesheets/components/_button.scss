@@ -145,14 +145,13 @@
 }
 
 .btn-offre-delete {
-  color: $rouge_coupon;
-  background: transparent;
+  color: white;
+  background: $rouge_coupon;
   padding: 10px;
   transition: background 0.3s ease;
   border-radius: 20px;
   font-size: 20px;
   margin-top: 20px;
-  border: 2px solid $rouge_coupon;
   display: inline-block;
 }
 
@@ -174,6 +173,10 @@
   transition: background 0.3s ease;
   font-size: 25px;
   margin-top: 20px;
+  width: min-content;
+  display: block;
+  margin: auto;
+  margin-bottom: 70px;
 }
 
 
@@ -248,4 +251,8 @@
 
 .btn-orange {
   background-color: $orange_dashboard;
+}
+
+.swal-button--confirm {
+  background-color: $vert_validation !important;
 }
