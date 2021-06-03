@@ -2,7 +2,10 @@
 
 .btn-text {
   color: $violet_boutique;
-  text-decoration: underline;
+}
+
+.fas {
+  color: $violet_boutique;
 }
 
 //########### BTN TEXT
@@ -192,8 +195,8 @@
   width: 50px;
   display: flex;
   margin-bottom: 16px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 
