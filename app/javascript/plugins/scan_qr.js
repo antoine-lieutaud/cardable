@@ -7,16 +7,11 @@ QrScanner.WORKER_PATH = QrScannerWorkerPath;
 const scanQR = () => {
   const video = document.getElementById('qr-video');
   if (video) {
-    const scanner = new QrScanner(video, successCallback, failureCallback)
-    // scanner.start();
-    scanner.start()
-    .then(
-      // () => this.hasCamera = true,
-      (error) => {
-          console.log(error);
-          // this.hasCamera = false;
-      }
-    );
+    QrScanner.hasCamera()
+    .then(() => {
+      const scanner = new QrScanner(video, successCallback, failureCallback)
+      scanner.start().then(error => {if (error) console.log(error)});
+    })
   }
 }
 
