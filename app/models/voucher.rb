@@ -28,7 +28,7 @@ class Voucher < ApplicationRecord
     amount = offer.price * number_of_redeems
     {
       coupons: number_of_vouchers,
-      formules: number_of_redeems,
+      validations: number_of_redeems,
       total: "#{amount}€"
     }
   end

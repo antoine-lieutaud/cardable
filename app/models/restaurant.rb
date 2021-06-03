@@ -44,7 +44,7 @@ class Restaurant < ApplicationRecord
     end
     {
       coupons: number_of_vouchers,
-      formules: number_of_redeems,
+      validations: number_of_redeems,
       total: "#{amount}€"
     }
   end
