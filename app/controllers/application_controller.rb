@@ -25,6 +25,10 @@ class ApplicationController < ActionController::Base
     restaurant_path(resource.restaurants.first)
   end
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   private
 
   def skip_pundit?
