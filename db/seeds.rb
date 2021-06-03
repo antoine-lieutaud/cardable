@@ -7,6 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
+
+
+Voucher.destroy_all
+Offer.destroy_all
 Restaurant.destroy_all
 User.destroy_all
 
@@ -14,3 +19,90 @@ bob = User.create!(email: "bob@mail.com", password: '123456')
 restaurant = Restaurant.new(name: "Chez Bob", address: "16 villa Gaudelet, 75011 Paris", phone_number: "0688658166", email: "chezbob@mail.com" )
 restaurant.owner = bob
 restaurant.save!
+
+
+brunch1 = Offer.new(price: 29, description: "Brunch sucré/salé avec boisson chaude à volonté", name: "Brunch Norvégien", validity: 3)
+brunch1.restaurant_id = restaurant.id
+brunch1.save!
+
+brunch2 = Offer.new(price: 35, description: "Diner en 5 services comprenant 2 entrées, 2 plats et un déssert", name: "Diner de charme", validity: 3)
+brunch2.restaurant_id = restaurant.id
+brunch2.save!
+
+brunch3 = Offer.new(price: 25, description: "Diner en 5 services comprenant 2 entrées, 2 plats et un déssert", name: "Menu du buron", validity: 3)
+brunch3.restaurant_id = restaurant.id
+brunch3.save!
+
+voucher1 = Voucher.new(limit_use: 1, customer_email: "patrice@gmail.com")
+voucher1.offer_id = brunch1.id
+voucher1.save!
+
+voucher2 = Voucher.new(limit_use: 1, customer_email: "edouard@gmail.com")
+voucher2.offer_id = brunch1.id
+voucher2.save!
+
+voucher3 = Voucher.new(limit_use: 1, customer_email: "romuald@gmail.com")
+voucher3.offer_id = brunch1.id
+voucher3.save!
+
+
+voucher4 = Voucher.new(limit_use: 1, customer_email: "leandre@gmail.com")
+voucher4.offer_id = brunch1.id
+voucher4.save!
+
+
+voucher5 = Voucher.new(limit_use: 1, customer_email: "ch.choffel@gmail.com")
+voucher5.offer_id = brunch1.id
+voucher5.save!
+
+voucher6 = Voucher.new(limit_use: 1, customer_email: "antoine.lieutaud@gmail.com")
+voucher6.offer_id = brunch1.id
+voucher6.save!
+
+voucher7 = Voucher.new(limit_use: 1, customer_email: "antoine.lieutaud@gmail.com", nb_redeems:1)
+voucher7.offer_id = brunch1.id
+voucher7.save!
+
+voucher7 = Voucher.new(limit_use: 1, customer_email: "antoine.lieutaud@gmail.com", nb_redeems:1)
+voucher7.offer_id = brunch1.id
+voucher7.save!
+
+voucher7 = Voucher.new(limit_use: 1, customer_email: "antoine.lieutaud@gmail.com", nb_redeems:1)
+voucher7.offer_id = brunch1.id
+voucher7.save!
+
+voucher7 = Voucher.new(limit_use: 1, customer_email: "antoine.lieutaud@gmail.com", nb_redeems:1)
+voucher7.offer_id = brunch1.id
+voucher7.save!
+
+voucher7 = Voucher.new(limit_use: 1, customer_email: "antoine.lieutaud@gmail.com", nb_redeems:1)
+voucher7.offer_id = brunch1.id
+voucher7.save!
+
+voucher7 = Voucher.new(limit_use: 1, customer_email: "antoine.lieutaud@gmail.com", nb_redeems:1)
+voucher7.offer_id = brunch1.id
+voucher7.save!
+
+voucher7 = Voucher.new(limit_use: 1, customer_email: "antoine.lieutaud@gmail.com", nb_redeems:1)
+voucher7.offer_id = brunch1.id
+voucher7.save!
+voucher7 = Voucher.new(limit_use: 1, customer_email: "antoine.lieutaud@gmail.com", nb_redeems:1)
+voucher7.offer_id = brunch1.id
+voucher7.save!
+voucher7 = Voucher.new(limit_use: 1, customer_email: "antoine.lieutaud@gmail.com", nb_redeems:1)
+voucher7.offer_id = brunch1.id
+voucher7.save!
+
+voucher7 = Voucher.new(limit_use: 1, customer_email: "antoine.lieutaud@gmail.com", nb_redeems:1)
+voucher7.offer_id = brunch1.id
+voucher7.save!
+
+voucher7 = Voucher.new(limit_use: 1, customer_email: "antoine.lieutaud@gmail.com", nb_redeems:1)
+voucher7.offer_id = brunch1.id
+voucher7.save!
+
+voucher7 = Voucher.new(limit_use: 1, customer_email: "antoine.lieutaud@gmail.com", nb_redeems:1)
+voucher7.offer_id = brunch1.id
+voucher7.save!
+
+
