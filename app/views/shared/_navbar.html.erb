@@ -1,5 +1,5 @@
 <div>
- <% unless (controller_name == "vouchers" && action_name == 'show') %>
+ <%# unless (controller_name == "vouchers" && action_name == 'show') %>
     <div class="footer-orga <%= @zone %>">
     <% unless action_name == "home" %>
       <%= link_to home_path do %>
@@ -50,5 +50,5 @@
       <%= content_for :back_link %>
     <%# end %>
     </div>
- <% end %>
+ <%# end %>
 </div>
