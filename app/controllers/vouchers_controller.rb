@@ -1,5 +1,4 @@
 class VouchersController < ApplicationController
-
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     @offers = @restaurant.offers
@@ -29,7 +28,7 @@ class VouchersController < ApplicationController
     # # @voucher.qr_code = qr.to_s
     # @voucher.save!
     VoucherMailer.send_voucher(@voucher).deliver_now
-    redirect_to voucher_path(@voucher)
+    redirect_to home_path(@voucher)
   end
 
   def show
